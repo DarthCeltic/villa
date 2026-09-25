@@ -1,0 +1,23 @@
+{
+ "contract": "argus-resource-floors-v1",
+ "measured": false,
+ "example": true,
+ "measured_from": "example figures shipped with the public release; they are not a measurement of any machine and are not enforced while measured is false",
+ "measured_utc": null,
+ "sampler": "none: write this file from the peaks of a job run under measurement on your own machine",
+ "ram_floor_mb": 8192,
+ "commit_floor_mb": 12288,
+ "vram_floor_mb": 4096,
+ "disk_floor_mb": 4096,
+ "why_the_floor_is_the_peak_with_no_margin": "A safety multiplier would be a guess. A measured floor is the largest value a real run actually reached, and a job of the same class needs at least that much.",
+ "single_observation": "Replace these example figures with the peaks of real runs on the machine that will do the work; the right correction when a job fails above a floor is another measurement rather than a larger constant.",
+ "per_model": {},
+ "totals": {
+  "final_output_mb": null,
+  "peak_vram_mb": null,
+  "card_total_vram_mb": null,
+  "vram_headroom_mb": null,
+  "what_the_headroom_means": "not measured in the public release"
+ },
+ "what_a_floor_is_for": "Once measured, a job is refused before it starts when free resources are below these floors."
+}

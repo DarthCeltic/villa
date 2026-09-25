@@ -1,0 +1,38 @@
+# Build context excludes -- keep the context small and never ship local/dev-only state into
+# an image layer. This does NOT change what git tracks (see .gitignore for that); it only
+# controls what `docker build` ever reads off disk.
+
+.git
+.venv
+.venv-*
+__pycache__
+**/__pycache__
+*.py[cod]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+argus_vesuvius.egg-info
+
+# Node toolchain -- rebuilt fresh inside the node-build stage via `npm ci`.
+argus/ui/node_modules
+argus/ui/dist
+
+# Runtime state / evidence / historical data -- these are volumes, not build inputs. Baking
+# them into an image would both bloat it and freeze a snapshot that immediately goes stale.
+artifacts
+corpus
+build
+
+# Scratch directories and stray logs left at the repo root by native runs.
+_scratch*
+*.log
+debug.log
+
+# Local env files -- never bake a secret or a machine-specific override into an image.
+.env
+*.env.local
+
+uv.lock
+
+# Private science material is mounted read-only at run time (ARGUS_PRIVATE_SCIENCE_DIR); never an image layer.
+.private-science-unmounted

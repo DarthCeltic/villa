@@ -1,0 +1,927 @@
+{
+  "schema_version": "argus.scroll_registry.v1",
+  "captured_at": "2026-09-25T11:34:46Z",
+  "classification_policy": {
+    "released_object_count": 45,
+    "explicit_fragment_rule": "Only identifiers containing an explicit Fr<number> suffix are classified as fragments. The other 39 entries remain scan_object; this registry does not assert that every one is an intact scroll.",
+    "proof_boundary": "Listing in the public S3 root proves release, not scroll condition, ink presence, segmentation readiness, or prize eligibility.",
+    "training_eligible_default": false
+  },
+  "sources": [
+    {
+      "source_id": "official_s3_index",
+      "title": "Vesuvius Challenge open-data S3 root index",
+      "url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/?list-type=2&delimiter=%2F",
+      "authority": "official",
+      "checked_at": "2026-09-25T11:34:46Z"
+    },
+    {
+      "source_id": "official_prizes_2027",
+      "title": "Vesuvius Challenge Open Prizes - 2027 Grand Prize",
+      "url": "https://scrollprize.org/prizes",
+      "authority": "official",
+      "checked_at": "2026-09-25T11:34:46Z"
+    },
+    {
+      "source_id": "official_homepage",
+      "title": "Vesuvius Challenge homepage",
+      "url": "https://scrollprize.org/",
+      "authority": "official",
+      "checked_at": "2026-08-03T12:00:00Z"
+    },
+    {
+      "source_id": "official_curated_datasets",
+      "title": "Vesuvius Challenge curated datasets",
+      "url": "https://scrollprize.org/data_datasets",
+      "authority": "official",
+      "checked_at": "2026-08-03T12:00:00Z"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "PHerc0009B",
+      "s3_prefix": "PHerc0009B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0125",
+      "s3_prefix": "PHerc0125/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151825-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0139",
+      "s3_prefix": "PHerc0139/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0172",
+      "s3_prefix": "PHerc0172/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0175A",
+      "s3_prefix": "PHerc0175A/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0175B",
+      "s3_prefix": "PHerc0175B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0191",
+      "s3_prefix": "PHerc0191/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151635-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0211",
+      "s3_prefix": "PHerc0211/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151803-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0257",
+      "s3_prefix": "PHerc0257/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151750-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0268",
+      "s3_prefix": "PHerc0268/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20251110183117-8.640um-1.2m-116keV",
+        "voxel_um": 8.64,
+        "energy_kev": 116.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0306B",
+      "s3_prefix": "PHerc0306B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0332",
+      "s3_prefix": "PHerc0332/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0343",
+      "s3_prefix": "PHerc0343/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0343P",
+      "s3_prefix": "PHerc0343P/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0358",
+      "s3_prefix": "PHerc0358/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151737-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0483A",
+      "s3_prefix": "PHerc0483A/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0483B",
+      "s3_prefix": "PHerc0483B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0490A",
+      "s3_prefix": "PHerc0490A/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0490B",
+      "s3_prefix": "PHerc0490B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0500P2",
+      "s3_prefix": "PHerc0500P2/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0800",
+      "s3_prefix": "PHerc0800/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250521135224-8.640um-1.2m-116keV",
+        "voxel_um": 8.64,
+        "energy_kev": 116.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0813",
+      "s3_prefix": "PHerc0813/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151723-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0814",
+      "s3_prefix": "PHerc0814/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0826",
+      "s3_prefix": "PHerc0826/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151701-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0841",
+      "s3_prefix": "PHerc0841/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0846A",
+      "s3_prefix": "PHerc0846A/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc0846B",
+      "s3_prefix": "PHerc0846B/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1203",
+      "s3_prefix": "PHerc1203/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250820131727-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules.",
+        "CORRECTED 2026-09-17: the volume_id was re-checked against the official prizes page (https://scrollprize.org/prizes), which names 20250820131727-9.362um-1.2m-113keV for this entry. Only this entry was re-verified on that date; the rest of this file's captured_at remains 2026-08-03 and should not be assumed current."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1218",
+      "s3_prefix": "PHerc1218/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250521120456-8.640um-1.2m-116keV",
+        "voxel_um": 8.64,
+        "energy_kev": 116.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1299",
+      "s3_prefix": "PHerc1299/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1447",
+      "s3_prefix": "PHerc1447/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250521151220-8.640um-1.2m-116keV",
+        "voxel_um": 8.64,
+        "energy_kev": 116.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1451",
+      "s3_prefix": "PHerc1451/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1545",
+      "s3_prefix": "PHerc1545/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data",
+        "grand_prize_2027_target",
+        "first_letters_2027_target"
+      ],
+      "grand_prize_2027": {
+        "eligible": true,
+        "volume_id": "20250821151648-9.362um-1.2m-113keV",
+        "voxel_um": 9.362,
+        "energy_kev": 113.0
+      },
+      "known_facts": [
+        "Exact eligible volume fixed by the 2027 Grand Prize rules."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1667",
+      "s3_prefix": "PHerc1667/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [
+        "First Herculaneum scroll reported virtually unwrapped and read end to end in 2026.",
+        "Not one of the 13 eligible 2027 Grand Prize volumes."
+      ],
+      "source_ids": [
+        "official_s3_index",
+        "official_homepage",
+        "official_prizes_2027"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc1667Cr1Fr3",
+      "s3_prefix": "PHerc1667Cr1Fr3/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHerc51Cr4Fr8",
+      "s3_prefix": "PHerc51Cr4Fr8/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercMAN5",
+      "s3_prefix": "PHercMAN5/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercMANB",
+      "s3_prefix": "PHercMANB/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercMANBp",
+      "s3_prefix": "PHercMANBp/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis1Fr34",
+      "s3_prefix": "PHercParis1Fr34/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis1Fr39",
+      "s3_prefix": "PHercParis1Fr39/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis2Fr143",
+      "s3_prefix": "PHercParis2Fr143/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis2Fr47",
+      "s3_prefix": "PHercParis2Fr47/",
+      "object_class": "fragment",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis3",
+      "s3_prefix": "PHercParis3/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    },
+    {
+      "object_id": "PHercParis4",
+      "s3_prefix": "PHercParis4/",
+      "object_class": "scan_object",
+      "roles": [
+        "released_open_data"
+      ],
+      "grand_prize_2027": {
+        "eligible": false
+      },
+      "known_facts": [],
+      "source_ids": [
+        "official_s3_index",
+        "official_curated_datasets"
+      ],
+      "training_eligible": false,
+      "promotion_eligible": false
+    }
+  ]
+}

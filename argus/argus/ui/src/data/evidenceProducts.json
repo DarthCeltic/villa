@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Evidence-gate defect corpus",
+    "kind": "OPERATIONAL CONTROL",
+    "result": "PASS · 9/9 synthetic controls (5 declared, 4 measured)",
+    "detail": "The measured half runs the real argus.core.contracts / argus.adapters.published_mesh geometry code -- not a lookalike -- against real tifxyz meshes and a real local zarr store: mesh-outside-volume (#1660), a discontinuous seam (#1675), and a chunk store whose data was never written (#1674) all fail as expected; a clean control passes every gate.",
+    "evidence_url": "evidence_gate_fixtures/README.md"
+  }
+]

@@ -1,0 +1,131 @@
+{
+  "schema": "argus-cli-component-manifest-v1",
+  "written_utc": "2026-09-10",
+  "how_to_read_this": [
+    "Every external thing ARGUS needs is listed here ONCE, with the four facts that decide",
+    "whether it may be acquired: where it comes from, which revision, how its bytes are",
+    "verified, and what its licence permits.",
+    "UNKNOWN IS A LITERAL VALUE, NEVER A BLANK. A field reading UNKNOWN carries a",
+    "why_unknown beside it and makes the component unverifiable, which is a REFUSAL in",
+    "`argus setup` rather than a warning. No hash and no licence in this file was invented;",
+    "an invented one is indistinguishable from a measured one once it is written down, and",
+    "that is the whole reason the field exists.",
+    "NO ABSOLUTE PATH APPEARS HERE. Where a component lands is decided by the path contract",
+    "(argus.core.paths) at run time. A machine-specific path baked into shipped config is a",
+    "file a stranger cannot use and cannot even diagnose."
+  ],
+  "integrity_modes": {
+    "SHA256": "one immutable file; the digest below is checked after transfer and a mismatch is a refusal",
+    "GIT_REVISION": "a repository pinned at a full 40-character commit; the commit IS the content address",
+    "GIT_REVISION_ABBREVIATED": "a pin recorded only in short form. NOT accepted as verification: a short prefix is not the address, and resolving it needs the very repository whose contents are in question",
+    "PER_OBJECT_MANIFEST": "a live prefix of many objects with no single digest. Integrity is per object, recorded in ACQUIRE_MANIFEST.json at fetch time by argus.core.acquisition_identity. Declared, not invented",
+    "UNKNOWN": "no content address is known to this project. Acquisition refuses"
+  },
+  "components": [
+    {
+      "id": "villa",
+      "name": "ScrollPrize villa (volume-cartographer, vc_render_tifxyz)",
+      "purpose": "the official CT-to-surface sampler and segmentation tooling. ARGUS shells out to it and never links it in",
+      "kind": "TOOL",
+      "acquire": "git",
+      "url": "https://github.com/ScrollPrize/villa.git",
+      "revision": "739eefd71a677bebb983186ae3d0a6bace669934",
+      "version": "pinned commit; see argus/upstream.lock.json for the same pin and its clone flags",
+      "integrity": {
+        "mode": "GIT_REVISION",
+        "value": "739eefd71a677bebb983186ae3d0a6bace669934",
+        "why_unknown": null
+      },
+      "licence": {
+        "spdx": "GPL-3.0-only",
+        "url": "https://github.com/ScrollPrize/villa/blob/main/LICENSE",
+        "family": "COPYLEFT",
+        "permits": "run as an external subprocess. NOT incorporated into ARGUS, and if a build of it is ever distributed the source-offer obligation attaches",
+        "registry_name": "vc_render_tifxyz / volume-cartographer"
+      },
+      "size_bytes": "UNKNOWN",
+      "why_unknown": "a blob:none depth-1 clone's size depends on what git decides to fetch; argus/upstream.lock.json records 268435456 bytes of .git plus 5003 checked-out files for one observed clone, which is a measurement of that clone and not a promise about yours",
+      "required_for": ["run"],
+      "profiles": ["gpu_6gb", "gpu_12gb", "cpu_only"]
+    },
+    {
+      "id": "ct_volumes",
+      "name": "Herculaneum CT volumes (open-data S3)",
+      "purpose": "the scans themselves. Fetched per region of interest, never bundled",
+      "kind": "DATA",
+      "acquire": "s3-prefix",
+      "url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/",
+      "revision": "n/a",
+      "version": "live prefix",
+      "integrity": {
+        "mode": "PER_OBJECT_MANIFEST",
+        "value": null,
+        "why_unknown": "a prefix of millions of chunk objects has no single digest. Each object is hashed as it lands and recorded in the store's ACQUIRE_MANIFEST.json, which is what a resume and a seal are checked against"
+      },
+      "licence": {
+        "spdx": "CC-BY-NC-4.0",
+        "url": "https://scrollprize.org/data",
+        "family": "NONCOMMERCIAL",
+        "permits": "fetch and use. NOT redistribution -- the installer must not bundle a byte of it",
+        "registry_name": "Herculaneum CT volumes"
+      },
+      "size_bytes": "UNKNOWN",
+      "why_unknown": "unbounded: the size acquired is whatever region of interest a run declares, not a property of the component",
+      "required_for": ["run"],
+      "profiles": ["gpu_6gb", "gpu_12gb", "cpu_only"]
+    },
+    {
+      "id": "ink_9um_labels",
+      "name": "ink_9um human ink labels",
+      "purpose": "public human ink labels",
+      "kind": "LABELS",
+      "acquire": "https",
+      "url": "hf://buckets/scrollprize/datasets/ink_9um",
+      "revision": "UNKNOWN",
+      "version": "UNKNOWN",
+      "integrity": {
+        "mode": "UNKNOWN",
+        "value": null,
+        "why_unknown": "the bucket is public but unversioned and this project has pinned no digest for it. Publicly fetchable is not the same as pinned, and the two are constantly confused"
+      },
+      "licence": {
+        "spdx": "UNKNOWN",
+        "url": "https://scrollprize.org/data",
+        "family": "UNDECLARED",
+        "permits": "treated as non-redistributable. The dataset declares no licence and the underlying CT is CC BY-NC 4.0",
+        "registry_name": "ink_9um labels"
+      },
+      "size_bytes": 33554432,
+      "why_unknown": "the 32 MiB figure is the size measured by argus.core.label_sources for the label set, not a size published by the bucket",
+      "required_for": [],
+      "profiles": ["gpu_6gb", "gpu_12gb"]
+    },
+    {
+      "id": "python_science_stack",
+      "name": "numpy / zarr / fsspec / s3fs",
+      "purpose": "reading volumes and writing stores",
+      "kind": "CODE",
+      "acquire": "pip",
+      "url": "https://pypi.org/simple/",
+      "revision": "n/a",
+      "version": "as declared in pyproject.toml [project.optional-dependencies] volume",
+      "provides_modules": ["numpy", "zarr", "fsspec", "s3fs"],
+      "integrity": {
+        "mode": "UNKNOWN",
+        "value": null,
+        "why_unknown": "a wheel digest is per version AND per platform tag, so one hash in this file would be wrong for most machines. The correct pin is a hash-locked requirements file, which this project has not generated: `uv pip compile --generate-hashes`. Until it exists, `argus setup` refuses to fetch these itself and prints the install line for the operator to run under their own package manager, which does verify"
+      },
+      "licence": {
+        "spdx": "BSD-3-Clause AND Apache-2.0 AND MIT",
+        "url": "https://pypi.org/",
+        "family": "PERMISSIVE",
+        "permits": "run, bundle, redistribute with notices",
+        "registry_name": "timm / torch / OpenCV / zarr"
+      },
+      "size_bytes": "UNKNOWN",
+      "why_unknown": "depends on the resolved dependency set for the host platform",
+      "required_for": ["run"],
+      "profiles": ["gpu_6gb", "gpu_12gb", "cpu_only"]
+    }
+  ]
+}

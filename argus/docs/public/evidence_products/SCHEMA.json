@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "argus-evidence-product-v1",
+  "title": "ARGUS evidence product",
+  "description": "One row on the /leaderboard board. A row is a claim about REPRODUCIBLE evidence, never a prize ranking and never a submission of its own -- see HOW_TO_ADD.md before opening a PR that appends one.",
+  "type": "object",
+  "required": ["name", "kind", "result", "detail", "evidence_url"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {"type": "string", "minLength": 1, "maxLength": 120,
+             "description": "What was checked, in plain language."},
+    "kind": {"type": "string",
+            "enum": ["OPERATIONAL CONTROL", "DEVELOPMENT EVIDENCE", "SCIENTIFIC RESULT"],
+            "description": "OPERATIONAL CONTROL: a checker/gate demonstrated against a defect corpus. DEVELOPMENT EVIDENCE: a measurement on training-exposed or in-development material. SCIENTIFIC RESULT: a result meeting the cross-scroll bar in argus.core.scroll_generalization -- do not use this value speculatively."},
+    "result": {"type": "string", "minLength": 1, "maxLength": 160,
+              "description": "The headline number or verdict, exact, not rounded to look better."},
+    "detail": {"type": "string", "minLength": 1, "maxLength": 400,
+              "description": "One or two sentences: what was measured, against what, and the one caveat a reader most needs."},
+    "evidence_url": {"type": "string", "minLength": 1,
+                     "description": "A path or URL to the actual receipt, ledger entry, or reproducible artifact. Never a bare claim with nothing behind it."},
+    "submitted_by": {"type": "string", "maxLength": 120,
+                     "description": "Optional. Omit for ARGUS's own rows."},
+    "submitted_utc": {"type": "string", "format": "date-time",
+                      "description": "Optional. ISO-8601 UTC timestamp of when the row was added."}
+  }
+}

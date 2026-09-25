@@ -1,0 +1,149 @@
+{
+ "schema": "argus-upstream-lock-v1",
+ "pinned_utc": "2026-09-06T17:34:30Z",
+ "upstream": {
+  "name": "villa",
+  "url": "https://github.com/ScrollPrize/villa.git",
+  "commit": "739eefd71a677bebb983186ae3d0a6bace669934",
+  "committed_utc": "2026-09-06T15:13:13+01:00",
+  "subject": "docs(scrollprize): open Progress Prizes 2026-09 (#1623)",
+  "path": "<ARGUS_UPSTREAM_ROOT>/villa"
+ },
+ "candidate": {
+  "ref": "origin/main",
+  "commit": "078e9eb3410f93f965951334bebca107cbe8dffb",
+  "materialization": "clean detached sparse worktree of the upstream checkout; stable checkout and admitted runtime remain untouched",
+  "review_status": "SOURCE_STAGED_FOCUSED_UPSTREAM_TESTS_PASSED_RUNTIME_NOT_PROMOTED",
+  "runtime": {
+   "path": "<ARGUS_RUNTIME_ROOT>/villa-candidate",
+   "python": "3.14.3",
+   "installed_extras": [
+    "tests",
+    "render",
+    "label-transfer"
+   ],
+   "verification": "49 upstream volume, zarr and surface-preflight tests previously passed at functional parent d285029a; at exact source candidate 078e9eb3 on 2026-09-24, 30 surface-preflight, 2 finalize-CLI and 7 training-schedule tests passed (39/39) through the already-installed full science dependency environment",
+   "limits": "the lightweight d285029a candidate runtime is missing dependencies needed by current main (tqdm, torch and nrrd across the focused files), so the 078e9eb3 source tests used a narrow package harness. Models, CUDA execution and volume-cartographer were not rebuilt or activated; this candidate cannot replace the admitted scientific runtime until an exact runtime, ARGUS adapter/sabotage suite and real-data controls pass"
+  },
+  "capabilities": [
+   "zarr_tasks create-level compatibility under Zarr 3 (#1682)",
+   "bounded VC3D region download and out-of-bounds refusal (#1707, #1676)",
+   "torn per-slice TIFF output detection (#1695)",
+   "compressed Zarr shard decoding repair (#1828)",
+   "changed-label invalidation in patch cache (#1701)",
+   "full-resolution tifxyz canvas correction (#1699)",
+   "Zarr 2/3 structure-tensor output compatibility (#1700)",
+   "documented remote-volume command-line workflow (#1763)",
+   "surface-only preflight plus metadata scale and bbox consistency gates (#1840)",
+   "finalize_outputs CLI parser binding repair (#1824)",
+   "training schedule defaults no longer override tr_config (#1702)",
+   "vc_render_tifxyz clean error on remote chunk failure (#1817)",
+   "vc_render_tifxyz rendering throughput rewrite (#1870)",
+   "remote cache trailing-separator and VC3D UNC-path handling (#1878, #1849)",
+   "spiral-fitting simplification and headless contract changes (#1871)"
+  ]
+ },
+ "clone_flags": {
+  "depth": 1,
+  "filter": "blob:none",
+  "recurse_submodules": false,
+  "lfs_smudge": "disabled via GIT_LFS_SKIP_SMUDGE=1",
+  "why": "history, LFS payloads, datasets and submodules are not needed to pin and call the code, and each would cost tens of GB"
+ },
+ "working_tree": {
+  "files_checked_out": 5003,
+  "git_dir_bytes": 268435456,
+  "components_present": [
+   "ink-detection",
+   "segmentation",
+   "spiral-fitting",
+   "lasagna",
+   "foundation",
+   "dinovol",
+   "vesuvius",
+   "volume-cartographer"
+  ],
+  "head_matches_pin": true,
+  "dirty_total_count": 5,
+  "dirty_source_count": 0,
+  "dirty_generated_count": 5,
+  "dirty_generated_paths": [
+   "segmentation/models/batchgeneratorsv2/batchgeneratorsv2.egg-info/SOURCES.txt",
+   "segmentation/models/batchgeneratorsv2/batchgeneratorsv2.egg-info/dependency_links.txt",
+   "segmentation/models/batchgeneratorsv2/batchgeneratorsv2.egg-info/requires.txt",
+   "segmentation/models/batchgeneratorsv2/batchgeneratorsv2.egg-info/top_level.txt",
+   "vesuvius/src/vesuvius/install/agreement.txt"
+  ],
+  "dirty_source_paths": [],
+  "is_the_pinned_code": true,
+  "correction": "this field previously read `dirty: 0`, which was false. Installing the runtime regenerated tracked .egg-info metadata and `vesuvius.accept_terms` wrote agreement.txt INTO the checkout. HEAD never moved, so a HEAD-only check reported a match while the working tree no longer equalled the pinned commit. The counts are now split: generated install metadata does not revoke the pin, a modified source file does.",
+  "what_each_count_means": {
+   "dirty_generated_count": "install side-effects (egg-info, agreement.txt, pycache); expected, does not revoke the pin",
+   "dirty_source_count": "files that change what Villa executes; MUST be 0 for is_the_pinned_code"
+  },
+  "measured_utc": "2026-09-06T19:16:44Z"
+ },
+ "runtime": {
+  "status": "BUILT AND VERIFIED",
+  "path": "<ARGUS_RUNTIME_ROOT>/villa-vesuvius",
+  "python": "3.14.3",
+  "rule": "Villa gets its OWN runtime from its own lockfile, invoked through a subprocess adapter. An existing Python environment is NOT modified -- contaminating a working environment to reach a new one is how both stop working.",
+  "why_separate_is_mandatory_not_preferred": "Villa's current packages declare requires-python >=3.14,<3.15. An older Python environment cannot install it, so Villa runs in its own runtime.",
+  "install_method": "editable from the pinned checkout, so the code executed IS the pinned commit rather than a copy that can drift invisibly. Safe only because the adapter re-verifies HEAD against this lock before every run.",
+  "torch": {
+   "version": "2.14.0+cu126",
+   "cuda_build": true,
+   "cuda_available": true,
+   "kernel_launched": true,
+   "usable_gpu": true,
+   "arch_list": [
+    "sm_50",
+    "sm_60",
+    "sm_61",
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90"
+   ],
+   "device": "recorded locally at verification time",
+   "detail": ""
+  },
+  "entry_points_running": 12,
+  "entry_points_total": 12,
+  "verified_utc": "2026-09-06T18:15:04Z"
+ },
+ "cache": {
+  "chunk_cache": "<ARGUS_CACHE_ROOT>",
+  "policy": "referenced IN PLACE, never copied or redownloaded to tidy the layout; walking a large cache with du is itself expensive and is avoided."
+ },
+ "torch_band_finding": {
+  "vesuvius_requires": "torch>=2.12,<3",
+  "spiral_fitting_requires": "torch>=2.11,<2.13",
+  "available_for_cp314": {
+   "cu128": "2.11.0",
+   "cu126": "2.14.0",
+   "cu130": "2.14.0",
+   "pypi": "2.14.0",
+   "cu129": "2.9.0"
+  },
+  "consequence": "on Python 3.14 NO torch satisfies both components, so vesuvius and spiral-fitting CANNOT share one runtime. A spiral-fitting run therefore needs its own environment built from spiral-fitting/uv.lock, not this one.",
+  "chosen": "torch 2.14.0+cu126 for the vesuvius runtime"
+ },
+ "cpp_gate": {
+  "package": "volume-cartographer",
+  "build": "scikit-build-core + nanobind + CMake, resolved by RELATIVE PATH inside the monorepo",
+  "status": "NOT BUILT on Windows",
+  "gates": [
+   "native full_3d_single_wrap",
+   "vesuvius.neural_tracing"
+  ],
+  "does_not_gate": [
+   "official data access",
+   "published surfaces",
+   "2.5D inference (vesuvius.predict)",
+   "upstream overlap-add finalizers (blend_logits / blend_and_finalize)"
+  ],
+  "note": "vesuvius.predict RUNS without it. The native path is intended for a Linux GPU host."
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "argus-public-target-v1",
+  "id": "pherc0139-w016-ink9um-control",
+  "title": "PHerc0139 w016 region, released Villa ink_9um checkpoint, reserved-validation control",
+  "purpose": "A bounded, public, non-prize pipeline control: identify a public surface volume, fetch a small crop of it over HTTPS, check chunk identity, prepare the 21-slice 9 um input with Villa's own preparer, run the released ink_9um checkpoint in fp32, and score it inside the published validation mask. It proves the pipeline moves. It is not a reading and not a discovery.",
+  "scroll": "PHerc0139",
+  "alias": "w016",
+  "upstream_segment": "20250108000004-w029_2025010827",
+  "volume_id": "20260102150214",
+  "source": {
+    "surface_volume_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/segments/20250108000004-w029_2025010827/surface-volumes/2.399um-0.22m-78keV-volume-20260102150214.zarr",
+    "array_path": "2",
+    "level_um": 9.596,
+    "declared_zarray": {
+      "zarr_format": 2, "shape": [109, 7020, 7220], "chunks": [109, 128, 128], "dtype": "|u1",
+      "compressor": null, "fill_value": 0, "order": "C", "filters": null, "dimension_separator": "/"
+    },
+    "roi": {"z0": 0, "z1": 109, "y0": 4736, "y1": 5632, "x0": 1664, "x1": 2304},
+    "phase": "A2",
+    "byte_ceiling": 134217728
+  },
+  "labels": {
+    "base_url": "https://huggingface.co/buckets/scrollprize/datasets/resolve/ink_9um/labels/aligned-scrollprizeorg-21slices/pherc0139-w016",
+    "arrays": {
+      "ink": "pherc0139-w016_inklabels.zarr/0",
+      "supervision": "pherc0139-w016_supervision_mask.zarr/0",
+      "validation": "pherc0139-w016_validation_mask.zarr/0"
+    },
+    "label_plane": 10,
+    "scored_where": "inside the published validation mask (the region reserved from training supervision), at the label plane",
+    "byte_ceiling": 16777216
+  },
+  "model": {
+    "name": "scrollprize/ink_9um hybrid_3d2d seed 42 step 75000",
+    "url": "https://huggingface.co/scrollprize/ink_9um/resolve/7109667e2607db1b90c37c8b09cb876ea7fe7bb1/hybrid_3d2d-seed42/step-075000.pth",
+    "revision": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+    "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+    "bytes": 138360039,
+    "licence": "MIT (Hugging Face model card metadata)",
+    "cache_name": "ink9um-hybrid3d2d-seed42-step075000.pth"
+  },
+  "input_contract": {
+    "prepared_format_tag": "level2-zmean4-21slice-v1",
+    "prepared_planes": 21,
+    "checkpoint_mode": "flat",
+    "checkpoint_patch_xy": 128,
+    "checkpoint_normalization": "robust_mad",
+    "checkpoint_provenance_role": "public_2p4_level2_zmean4",
+    "case_name": "pherc0139-w016",
+    "precision": "fp32"
+  },
+  "stages": [
+    {"id": "identify", "uses": "argus.core.official_identity"},
+    {"id": "gate_target", "uses": "argus.core.official_identity survey prize_sets"},
+    {"id": "acquire_ct", "uses": "argus.core.volume_acquisition"},
+    {"id": "acquire_labels", "uses": "public label bucket, chunk-bounded"},
+    {"id": "acquire_model", "uses": "pinned checkpoint, sha256 verified"},
+    {"id": "inspect", "uses": "evidence_gate chunk-identity probe"},
+    {"id": "prepare", "capability": "vesuvius.ink_detection.prepare_9um_input"},
+    {"id": "contract", "uses": "checkpoint config against the prepared input"},
+    {"id": "infer", "capability": "vesuvius.ink_detection.infer"},
+    {"id": "score", "uses": "argus.core.metrics"},
+    {"id": "receipt", "uses": "argus.core.result_class, argus.core.stage_lineage"}
+  ],
+  "terms": {
+    "ct_data": "CC BY-NC 4.0, Vesuvius Challenge open data (https://scrollprize.org/data). Non-commercial use with attribution; cite the dataset.",
+    "labels": "ink_9um label set, Vesuvius Challenge (https://scrollprize.org/data); the bucket declares no separate licence, so treat it as non-redistributable.",
+    "model": "scrollprize/ink_9um, MIT per its Hugging Face card.",
+    "tools": "Villa (ScrollPrize/villa), MIT.",
+    "citation": "Vesuvius Challenge, open data, PHerc0139 (https://scrollprize.org/data)"
+  }
+}

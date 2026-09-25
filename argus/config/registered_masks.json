@@ -1,0 +1,5 @@
+{
+ "schema": "argus-registered-masks-v1",
+ "masks": [],
+ "note": "The server's own manifest of region masks. Empty: no cavity, SDF, between-wrap or paired-surface artifact is registered for any real scroll, so none is offered. An entry binds physical_scroll, volume_id, grid, level, artifact_type, source_digest, content_sha256, merkle_root and chunk_count; produce one with `python -m argus.core.mask_registry`. Only the server reads this file; a caller never supplies a digest."
+}

@@ -1,0 +1,103 @@
+# Proposed Villa-root workflow: .github/workflows/argus-ci.yml. NOT ACTIVE inside this export.
+# GitHub only reads workflows at the repository root, so the copy of the workflow that ships inside
+# the argus/ tree (argus/.github/workflows/argus-portable-validation.yml) is inert in the monorepo;
+# this file is its Villa-root equivalent. It mirrors that workflow (manifest, public test kit,
+# compile, cleanliness; Python 3.11/3.12/3.14; UI build and unit tests on Node 22) with `uv`, the
+# argus/ path filter and `working-directory: argus`. Copy it as-is once a maintainer accepts the subproject.
+name: ARGUS CI
+
+on:
+  pull_request:
+    paths:
+      - 'argus/**'
+      - '.github/workflows/argus-ci.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'argus/**'
+      - '.github/workflows/argus-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: argus-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-portable:
+    name: Public test kit (Python ${{ matrix.python }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.14']
+    defaults:
+      run:
+        working-directory: argus
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Place the virtual environment outside the checkout
+        run: echo "UV_PROJECT_ENVIRONMENT=$RUNNER_TEMP/argus-venv" >> "$GITHUB_ENV"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+          cache-dependency-glob: argus/uv.lock
+
+      - name: Install locked dependencies (CPU and service profile, no torch)
+        run: uv sync --locked --extra service --extra volume --extra test
+
+      - name: Verify the release manifest
+        run: uv run --no-sync python tools/verify_manifest.py
+
+      - name: Run the public test kit
+        run: uv run --no-sync python scripts/run_portable_ci.py
+
+      - name: Compile Python sources
+        run: uv run --no-sync python -m compileall -q argus src evidence_gate
+
+      - name: Verify checkout cleanliness (argus/ only)
+        run: |
+          git diff --check -- .
+          test -z "$(git status --short -- .)"
+
+  ui-portable:
+    name: UI build and unit tests (Node 22)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: argus/argus/ui
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: argus/argus/ui/package-lock.json
+
+      - name: Install locked UI dependencies
+        run: npm ci
+
+      - name: Build production UI
+        run: npm run build
+
+      - name: Run UI unit tests
+        run: npm run test:unit -- --run
+
+      - name: Verify checkout cleanliness (argus/ only)
+        working-directory: argus
+        run: |
+          git diff --check -- .
+          test -z "$(git status --short -- .)"

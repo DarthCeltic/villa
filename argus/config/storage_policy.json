@@ -1,0 +1,14 @@
+{
+ "schema": "argus-storage-policy-config-v1",
+ "why": "hard_stop_gib is an absolute refusal floor; advisory_gib is preferred headroom that only warns and never refuses. The two entries are the two protected volumes storage_policy checks (\"c\" and \"t\"); the values below are neutral examples, edit them for your machine.",
+ "drives": {
+  "c": {
+   "hard_stop_gib": 20,
+   "advisory_gib": null
+  },
+  "t": {
+   "hard_stop_gib": 20,
+   "advisory_gib": 40
+  }
+ }
+}

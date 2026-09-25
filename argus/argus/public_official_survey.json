@@ -1,0 +1,2721 @@
+{
+ "checked_at": "2026-09-25T11:34:46Z",
+ "generated_by": "scripts/refresh_official_survey.py",
+ "identity_terms": {
+  "scan_id": "the acquisition (CT scan) timestamp; the catalogue's `scans` keys",
+  "volume_id": "the reconstruction timestamp naming an OME-Zarr store; the catalogue's `volumes` keys, and what the prize page and every tifxyz `<segment>-on-<volume_id>-<pitch>um` name refers to. One scan can have several volumes and one scroll several scans."
+ },
+ "prize_set_notes": {
+  "FIRST_LETTERS": "22 eligible volumes. The set is not a superset of the Grand Prize set: the prize page says it excludes scrolls where letters have now been found, and PHerc1447 is on the Grand Prize list but no longer on this one. Earlier ARGUS records carried 23 (they still listed PHerc1447 in First Letters).",
+  "GRAND_PRIZE_2027": "13 eligible volumes."
+ },
+ "prize_sets": {
+  "FIRST_LETTERS": {
+   "count": 22,
+   "scrolls": [
+    "PHerc0125",
+    "PHerc0175A",
+    "PHerc0175B",
+    "PHerc0191",
+    "PHerc0211",
+    "PHerc0257",
+    "PHerc0268",
+    "PHerc0306B",
+    "PHerc0343",
+    "PHerc0358",
+    "PHerc0483A",
+    "PHerc0483B",
+    "PHerc0490A",
+    "PHerc0490B",
+    "PHerc0800",
+    "PHerc0813",
+    "PHerc0826",
+    "PHerc0846A",
+    "PHerc0846B",
+    "PHerc1203",
+    "PHerc1218",
+    "PHerc1545"
+   ],
+   "volume_ids": {
+    "PHerc0125": "20250821151825",
+    "PHerc0175A": "20250521115057",
+    "PHerc0175B": "20250521125822",
+    "PHerc0191": "20250821151635",
+    "PHerc0211": "20250821151803",
+    "PHerc0257": "20250821151750",
+    "PHerc0268": "20251110183117",
+    "PHerc0306B": "20250521133212",
+    "PHerc0343": "20250521140437",
+    "PHerc0358": "20250821151737",
+    "PHerc0483A": "20250521140913",
+    "PHerc0483B": "20251124083638",
+    "PHerc0490A": "20250521151210",
+    "PHerc0490B": "20250521151215",
+    "PHerc0800": "20250521135224",
+    "PHerc0813": "20250821151723",
+    "PHerc0826": "20250821151701",
+    "PHerc0846A": "20250728152254",
+    "PHerc0846B": "20250804142305",
+    "PHerc1203": "20250820131727",
+    "PHerc1218": "20250521120456",
+    "PHerc1545": "20250821151648"
+   }
+  },
+  "GRAND_PRIZE_2027": {
+   "count": 13,
+   "scrolls": [
+    "PHerc0125",
+    "PHerc0191",
+    "PHerc0211",
+    "PHerc0257",
+    "PHerc0268",
+    "PHerc0358",
+    "PHerc0800",
+    "PHerc0813",
+    "PHerc0826",
+    "PHerc1203",
+    "PHerc1218",
+    "PHerc1447",
+    "PHerc1545"
+   ],
+   "volume_ids": {
+    "PHerc0125": "20250821151825",
+    "PHerc0191": "20250821151635",
+    "PHerc0211": "20250821151803",
+    "PHerc0257": "20250821151750",
+    "PHerc0268": "20251110183117",
+    "PHerc0358": "20250821151737",
+    "PHerc0800": "20250521135224",
+    "PHerc0813": "20250821151723",
+    "PHerc0826": "20250821151701",
+    "PHerc1203": "20250820131727",
+    "PHerc1218": "20250521120456",
+    "PHerc1447": "20250521151220",
+    "PHerc1545": "20250821151648"
+   }
+  }
+ },
+ "read_only": "metadata objects only (catalogue JSON, level-0 .zarray, the prize page); no chunk and no voxel is ever requested",
+ "samples": {
+  "PHerc0009B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509053741": {
+     "energy_kev": 116.0,
+     "long_id": "20250509053741-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    },
+    "20250718080859": {
+     "energy_kev": 77.0,
+     "long_id": "20250718080859-2.401um-0.3m-77keV",
+     "pixel_size_um": 2.401
+    }
+   },
+   "segments_listed": 19,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {
+    "20250521125136": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       9598,
+       7837,
+       7837
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521125136-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [],
+     "scan_id": "20250509053741",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0009B/volumes/20250521125136-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0009B/volumes/20250521125136-8.640um-1.2m-116keV-masked.zarr/"
+    },
+    "20250820154339": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       29112,
+       28259,
+       28259
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250820154339-2.401um-0.3m-77keV",
+     "pixel_size_um": 2.401,
+     "prizes": [],
+     "scan_id": "20250718080859",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0009B/volumes/20250820154339-2.401um-0.3m-77keV-masked.zarr/",
+     "store": "PHerc0009B/volumes/20250820154339-2.401um-0.3m-77keV-masked.zarr/"
+    },
+    "20260319104112": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       29112,
+       28259,
+       28259
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319104112-2.401um-0.3m-77keV",
+     "pixel_size_um": 2.401,
+     "prizes": [],
+     "scan_id": "20250718080859",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0009B/volumes/20260319104112-2.401um-0.3m-77keV-masked.zarr/",
+     "store": "PHerc0009B/volumes/20260319104112-2.401um-0.3m-77keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0125": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720091415": {
+     "energy_kev": 113.0,
+     "long_id": "20250720091415-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151825": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       20840,
+       8387,
+       8387
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151825-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720091415",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0125/volumes/20250821151825-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0125/volumes/20250821151825-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0139": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720065842": {
+     "energy_kev": 113.0,
+     "long_id": "20250720065842-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    },
+    "20250720235903": {
+     "energy_kev": 77.0,
+     "long_id": "20250720235903-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403
+    },
+    "20250722040659": {
+     "energy_kev": 77.0,
+     "long_id": "20250722040659-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403
+    },
+    "20251202104544": {
+     "energy_kev": 59.0,
+     "long_id": "20251202104544-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129
+    },
+    "20251205005141": {
+     "energy_kev": 78.0,
+     "long_id": "20251205005141-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 39,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250728140407": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       20974,
+       6621,
+       6621
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250728140407-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [],
+     "scan_id": "20250720065842",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr/"
+    },
+    "20250820105138": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19393,
+       26105,
+       26105
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250820105138-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250722040659",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20250820105138-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20250820105138-2.403um-0.2m-77keV-masked.zarr/"
+    },
+    "20250822062710": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15137,
+       26061,
+       26061
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250822062710-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250720235903",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20250822062710-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20250822062710-2.403um-0.2m-77keV-masked.zarr/"
+    },
+    "20260102150214": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       76953,
+       26511,
+       26511
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260102150214-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251205005141",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20260102150214-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20260102150214-2.399um-0.2m-78keV-masked.zarr/"
+    },
+    "20260319133050": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15137,
+       26061,
+       26061
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319133050-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250720235903",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20260319133050-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20260319133050-2.403um-0.2m-77keV-masked.zarr/"
+    },
+    "20260319133554": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19368,
+       26105,
+       26105
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319133554-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250720235903",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20260319133554-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20260319133554-2.403um-0.2m-77keV-masked.zarr/"
+    },
+    "20260413113053": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19297,
+       35971,
+       32318
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 59.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260413113053-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129,
+     "prizes": [],
+     "scan_id": "20251202104544",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/volumes/20260413113053-1.129um-0.2m-59keV-masked.zarr/",
+     "store": "PHerc0139/volumes/20260413113053-1.129um-0.2m-59keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0172": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20241024131838": {
+     "energy_kev": 53.0,
+     "long_id": "20241024131838-7.910um-53keV",
+     "pixel_size_um": 7.91
+    }
+   },
+   "segments_listed": 53,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20241024131838": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       21000,
+       6700,
+       9100
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 53.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20241024131838-7.910um-53keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20241024131838",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0172/volumes/20241024131838-7.910um-53keV-masked.zarr/",
+     "store": "PHerc0172/volumes/20241024131838-7.910um-53keV-masked.zarr/"
+    },
+    "20241024131839": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       20820,
+       6700,
+       9100
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 53.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20241024131839-7.910um-53keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20241024131838",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0172/volumes/20241024131839-7.910um-53keV-masked.zarr/",
+     "store": "PHerc0172/volumes/20241024131839-7.910um-53keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0175A": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250511125731": {
+     "energy_kev": 116.0,
+     "long_id": "20250511125731-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521115057": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       12748,
+       9363,
+       9363
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521115057-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250511125731",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0175A/volumes/20250521115057-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0175A/volumes/20250521115057-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0175B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510115222": {
+     "energy_kev": 116.0,
+     "long_id": "20250510115222-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521125822": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15897,
+       9613,
+       9613
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521125822-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250510115222",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0175B/volumes/20250521125822-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0175B/volumes/20250521125822-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0191": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720024445": {
+     "energy_kev": 113.0,
+     "long_id": "20250720024445-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151635": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       18977,
+       8387,
+       8387
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151635-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720024445",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0191/volumes/20250821151635-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0191/volumes/20250821151635-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0211": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720140115": {
+     "energy_kev": 113.0,
+     "long_id": "20250720140115-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151803": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19416,
+       7948,
+       7948
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151803-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720140115",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0257": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720113058": {
+     "energy_kev": 113.0,
+     "long_id": "20250720113058-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151750": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       18872,
+       8388,
+       8388
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151750-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720113058",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0268": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250511054932": {
+     "energy_kev": 116.0,
+     "long_id": "20250511054932-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20251110183117": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       14833,
+       12145,
+       12145
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20251110183117-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250511054932",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0268/volumes/20251110183117-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0268/volumes/20251110183117-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0306B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510062844": {
+     "energy_kev": 116.0,
+     "long_id": "20250510062844-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521133212": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15898,
+       8849,
+       8849
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521133212-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250510062844",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0306B/volumes/20250521133212-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0306B/volumes/20250521133212-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0332": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20231027191953": {
+     "energy_kev": 53.0,
+     "long_id": "20231027191953-3.240um-53keV",
+     "pixel_size_um": 3.24
+    },
+    "20231117143551": {
+     "energy_kev": 53.0,
+     "long_id": "20231117143551-7.910um-53keV",
+     "pixel_size_um": 7.91
+    },
+    "20231201141544": {
+     "energy_kev": 70.0,
+     "long_id": "20231201141544-3.240um-70keV",
+     "pixel_size_um": 3.24
+    },
+    "20251205210228": {
+     "energy_kev": 78.0,
+     "long_id": "20251205210228-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 2,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20231027191953": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       22929,
+       9414,
+       9414
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 53.0,
+     "license": "EduceLab Data License",
+     "long_id": "20231027191953-3.240um-53keV",
+     "pixel_size_um": 3.24,
+     "prizes": [],
+     "scan_id": "20231027191953",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHerc0332/volumes/20231027191953-3.240um-53keV-masked.zarr/",
+     "store": "samples/PHerc0332/volumes/20231027191953-3.240um-53keV-masked.zarr/"
+    },
+    "20231117143551": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       9777,
+       3550,
+       3400
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 53.0,
+     "license": "EduceLab Data License",
+     "long_id": "20231117143551-7.910um-53keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20231117143551",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHerc0332/volumes/20231117143551-7.910um-53keV-masked.zarr/",
+     "store": "samples/PHerc0332/volumes/20231117143551-7.910um-53keV-masked.zarr/"
+    },
+    "20231201141544": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       22929,
+       9414,
+       9414
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 70.0,
+     "license": "EduceLab Data License",
+     "long_id": "20231201141544-3.240um-70keV",
+     "pixel_size_um": 3.24,
+     "prizes": [],
+     "scan_id": "20231201141544",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHerc0332/volumes/20231201141544-3.240um-70keV-masked.zarr/",
+     "store": "samples/PHerc0332/volumes/20231201141544-3.240um-70keV-masked.zarr/"
+    },
+    "20251211183505": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       33592,
+       15761,
+       15761
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20251211183505-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251205210228",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0332/volumes/20251211183505-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc0332/volumes/20251211183505-2.399um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0343": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509220833": {
+     "energy_kev": 116.0,
+     "long_id": "20250509220833-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521140437": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       17998,
+       8595,
+       8595
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521140437-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250509220833",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0343/volumes/20250521140437-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0343/volumes/20250521140437-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0343P": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510090703": {
+     "energy_kev": 116.0,
+     "long_id": "20250510090703-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    },
+    "20250512023932": {
+     "energy_kev": 111.0,
+     "long_id": "20250512023932-2.215um-0.4m-111keV",
+     "pixel_size_um": 2.215
+    }
+   },
+   "segments_listed": 8,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {
+    "20250521134555": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       5398,
+       5057,
+       5057
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521134555-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [],
+     "scan_id": "20250510090703",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0343P/volumes/20250521134555-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0343P/volumes/20250521134555-8.640um-1.2m-116keV-masked.zarr/"
+    },
+    "20260304131111": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       20714,
+       13155,
+       13155
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 111.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260304131111-2.215um-0.4m-111keV",
+     "pixel_size_um": 2.215,
+     "prizes": [],
+     "scan_id": "20250512023932",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0343P/volumes/20260304131111-2.215um-0.4m-111keV-masked.zarr/",
+     "store": "PHerc0343P/volumes/20260304131111-2.215um-0.4m-111keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0358": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250719150703": {
+     "energy_kev": 113.0,
+     "long_id": "20250719150703-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151737": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       14744,
+       7783,
+       7783
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151737-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250719150703",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0483A": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510022723": {
+     "energy_kev": 116.0,
+     "long_id": "20250510022723-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521140913": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15898,
+       8849,
+       8849
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521140913-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250510022723",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0483A/volumes/20250521140913-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0483A/volumes/20250521140913-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0483B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509113134": {
+     "energy_kev": 116.0,
+     "long_id": "20250509113134-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20251124083638": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       11880,
+       8343,
+       8343
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20251124083638-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250509113134",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0483B/volumes/20251124083638-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0483B/volumes/20251124083638-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0490A": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509181146": {
+     "energy_kev": 116.0,
+     "long_id": "20250509181146-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521151210": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       11698,
+       9101,
+       9101
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521151210-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250509181146",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0490A/volumes/20250521151210-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0490A/volumes/20250521151210-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0490B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509082300": {
+     "energy_kev": 116.0,
+     "long_id": "20250509082300-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521151215": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       10648,
+       8343,
+       8343
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521151215-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250509082300",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0490B/volumes/20250521151215-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0490B/volumes/20250521151215-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0500P2": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250507210011": {
+     "energy_kev": null,
+     "long_id": "20250507210011-4.317um-1.2m-111keV",
+     "pixel_size_um": null
+    },
+    "20250508033249": {
+     "energy_kev": 111.0,
+     "long_id": "20250508033249-2.215um-0.4m-111keV",
+     "pixel_size_um": 2.215
+    },
+    "20250720125517": {
+     "energy_kev": 113.0,
+     "long_id": "20250720125517-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    },
+    "20250721125050": {
+     "energy_kev": 65.35,
+     "long_id": "20250721125050-0.550um-0.1m-65keV",
+     "pixel_size_um": 0.55
+    }
+   },
+   "segments_listed": 46,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {
+    "20250526151718": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       28096,
+       18209,
+       18209
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 111.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250526151718-2.215um-0.4m-111keV",
+     "pixel_size_um": 2.215,
+     "prizes": [],
+     "scan_id": "20250508033249",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0500P2/volumes/20250526151718-2.215um-0.4m-111keV-masked.zarr/",
+     "store": "PHerc0500P2/volumes/20250526151718-2.215um-0.4m-111keV-masked.zarr/"
+    },
+    "20250528085330": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15838,
+       9423,
+       9423
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 111.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250528085330-4.317um-1.2m-111keV",
+     "pixel_size_um": 4.317,
+     "prizes": [],
+     "scan_id": "20250507210011",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0500P2/volumes/20250528085330-4.317um-1.2m-111keV-masked.zarr/",
+     "store": "PHerc0500P2/volumes/20250528085330-4.317um-1.2m-111keV-masked.zarr/"
+    },
+    "20250820143440": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       7057,
+       4196,
+       4196
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250820143440-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [],
+     "scan_id": "20250720125517",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0500P2/volumes/20250820143440-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0500P2/volumes/20250820143440-9.362um-1.2m-113keV-masked.zarr/"
+    },
+    "20250821110041": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       12320,
+       10813,
+       3891
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 65.35,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821110041-0.550um-0.1m-65keV",
+     "pixel_size_um": 0.55,
+     "prizes": [],
+     "scan_id": "20250721125050",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0500P2/volumes/20250821110041-0.550um-0.1m-65keV-masked.zarr/",
+     "store": "PHerc0500P2/volumes/20250821110041-0.550um-0.1m-65keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0800": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510225703": {
+     "energy_kev": 116.0,
+     "long_id": "20250510225703-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 6,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521135224": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       24298,
+       9867,
+       9867
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521135224-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250510225703",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc0800/volumes/20250521135224-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0813": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720160015": {
+     "energy_kev": 113.0,
+     "long_id": "20250720160015-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151723": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       16993,
+       7947,
+       7947
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151723-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720160015",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0813/volumes/20250821151723-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0813/volumes/20250821151723-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0814": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250719170512": {
+     "energy_kev": 113.0,
+     "long_id": "20250719170512-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    },
+    "20251202233003": {
+     "energy_kev": 59.0,
+     "long_id": "20251202233003-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129
+    },
+    "20251206184543": {
+     "energy_kev": 78.0,
+     "long_id": "20251206184543-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 19,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250804134230": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19390,
+       5784,
+       5784
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250804134230-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [],
+     "scan_id": "20250719170512",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0814/volumes/20250804134230-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0814/volumes/20250804134230-9.362um-1.2m-113keV-masked.zarr/"
+    },
+    "20260309142202": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       74568,
+       23891,
+       23891
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260309142202-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251206184543",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0814/volumes/20260309142202-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc0814/volumes/20260309142202-2.399um-0.2m-78keV-masked.zarr/"
+    },
+    "20260521123630": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       46721,
+       22078,
+       20284
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 59.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260521123630-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129,
+     "prizes": [],
+     "scan_id": "20251202233003",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0814/volumes/20260521123630-1.129um-0.2m-59keV-masked.zarr/",
+     "store": "PHerc0814/volumes/20260521123630-1.129um-0.2m-59keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0826": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720174915": {
+     "energy_kev": 113.0,
+     "long_id": "20250720174915-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151701": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       16920,
+       8169,
+       8169
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151701-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720174915",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0826/volumes/20250821151701-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0826/volumes/20250821151701-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0841": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250719115350": {
+     "energy_kev": 113.0,
+     "long_id": "20250719115350-9.366um-1.2m-113keV",
+     "pixel_size_um": 9.366
+    },
+    "20250721195912": {
+     "energy_kev": 77.0,
+     "long_id": "20250721195912-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403
+    }
+   },
+   "segments_listed": 3,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151531": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       19400,
+       7703,
+       7703
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151531-9.366um-1.2m-113keV",
+     "pixel_size_um": 9.366,
+     "prizes": [],
+     "scan_id": "20250719115350",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0841/volumes/20250821151531-9.366um-1.2m-113keV-masked.zarr/"
+    },
+    "20260319124803": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15121,
+       30469,
+       30469
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319124803-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250721195912",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0841/volumes/20260319124803-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0841/volumes/20260319124803-2.403um-0.2m-77keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0846A": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250719225346": {
+     "energy_kev": 113.0,
+     "long_id": "20250719225346-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    },
+    "20250721134414": {
+     "energy_kev": 77.0,
+     "long_id": "20250721134414-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250728152254": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       14019,
+       7726,
+       7726
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250728152254-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250719225346",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0846A/volumes/20250728152254-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0846A/volumes/20250728152254-9.362um-1.2m-113keV-masked.zarr/"
+    },
+    "20260319102732": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15137,
+       29587,
+       29587
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319102732-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250721134414",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0846A/volumes/20260319102732-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc0846A/volumes/20260319102732-2.403um-0.2m-77keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc0846B": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250719185515": {
+     "energy_kev": 113.0,
+     "long_id": "20250719185515-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250804142305": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       13926,
+       7859,
+       7859
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250804142305-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS"
+     ],
+     "scan_id": "20250719185515",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0846B/volumes/20250804142305-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc0846B/volumes/20250804142305-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1203": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720004030": {
+     "energy_kev": 113.0,
+     "long_id": "20250720004030-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    },
+    "20250721080303": {
+     "energy_kev": 77.0,
+     "long_id": "20250721080303-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250820131727": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       18977,
+       6844,
+       6844
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250820131727-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720004030",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr/"
+    },
+    "20260319130212": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       15137,
+       26493,
+       26493
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 77.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319130212-2.403um-0.2m-77keV",
+     "pixel_size_um": 2.403,
+     "prizes": [],
+     "scan_id": "20250721080303",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1203/volumes/20260319130212-2.403um-0.2m-77keV-masked.zarr/",
+     "store": "PHerc1203/volumes/20260319130212-2.403um-0.2m-77keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1218": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250510170249": {
+     "energy_kev": 116.0,
+     "long_id": "20250510170249-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521120456": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       23247,
+       7593,
+       7593
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521120456-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250510170249",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1218/volumes/20250521120456-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc1218/volumes/20250521120456-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1299": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20251207084608": {
+     "energy_kev": 78.0,
+     "long_id": "20251207084608-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20260309130042": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       49233,
+       20579,
+       20579
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260309130042-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251207084608",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1299/volumes/20260309130042-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc1299/volumes/20260309130042-2.399um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1447": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509011039": {
+     "energy_kev": 116.0,
+     "long_id": "20250509011039-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    }
+   },
+   "segments_listed": 15,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521151220": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       24297,
+       8343,
+       8343
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521151220-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250509011039",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc1447/volumes/20250521151220-8.640um-1.2m-116keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1451": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250509145349": {
+     "energy_kev": 116.0,
+     "long_id": "20250509145349-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64
+    },
+    "20251206024238": {
+     "energy_kev": 78.0,
+     "long_id": "20251206024238-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250521151225": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       17998,
+       5815,
+       5815
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 116.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250521151225-8.640um-1.2m-116keV",
+     "pixel_size_um": 8.64,
+     "prizes": [],
+     "scan_id": "20250509145349",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1451/volumes/20250521151225-8.640um-1.2m-116keV-masked.zarr/",
+     "store": "PHerc1451/volumes/20250521151225-8.640um-1.2m-116keV-masked.zarr/"
+    },
+    "20260319101107": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       59944,
+       20811,
+       20811
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260319101107-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251206024238",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1451/volumes/20260319101107-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc1451/volumes/20260319101107-2.399um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1545": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20250720045926": {
+     "energy_kev": 113.0,
+     "long_id": "20250720045926-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20250821151648": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       20961,
+       7506,
+       7506
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 113.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20250821151648-9.362um-1.2m-113keV",
+     "pixel_size_um": 9.362,
+     "prizes": [
+      "FIRST_LETTERS",
+      "GRAND_PRIZE_2027"
+     ],
+     "scan_id": "20250720045926",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1545/volumes/20250821151648-9.362um-1.2m-113keV-masked.zarr/",
+     "store": "PHerc1545/volumes/20250821151648-9.362um-1.2m-113keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1667": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20231107190228": {
+     "energy_kev": 88.0,
+     "long_id": "20231107190228-3.240um-88keV",
+     "pixel_size_um": 3.24
+    },
+    "20231117161658": {
+     "energy_kev": 53.0,
+     "long_id": "20231117161658-7.910um-53keV",
+     "pixel_size_um": 7.91
+    },
+    "20251204164204": {
+     "energy_kev": 78.0,
+     "long_id": "20251204164204-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    },
+    "20251208002146": {
+     "energy_kev": 59.0,
+     "long_id": "20251208002146-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129
+    }
+   },
+   "segments_listed": 20,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20231107190228": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       26132,
+       7960,
+       8120
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 88.0,
+     "license": "EduceLab Data License",
+     "long_id": "20231107190228-3.240um-88keV",
+     "pixel_size_um": 3.24,
+     "prizes": [],
+     "scan_id": "20231107190228",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHerc1667/volumes/20231107190228-3.240um-88keV-masked.zarr/",
+     "store": "samples/PHerc1667/volumes/20231107190228-3.240um-88keV-masked.zarr/"
+    },
+    "20231117161658": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       11173,
+       3340,
+       3440
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 53.0,
+     "license": "EduceLab Data License",
+     "long_id": "20231117161658-7.910um-53keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20231117161658",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHerc1667/volumes/20231117161658-7.910um-53keV-masked.zarr/",
+     "store": "samples/PHerc1667/volumes/20231117161658-7.910um-53keV-masked.zarr/"
+    },
+    "20251217075048": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       37076,
+       15229,
+       15229
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20251217075048-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251204164204",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1667/volumes/20251217075048-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHerc1667/volumes/20251217075048-2.399um-0.2m-78keV-masked.zarr/"
+    },
+    "20260323082859": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       42209,
+       22122,
+       20276
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 59.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260323082859-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129,
+     "prizes": [],
+     "scan_id": "20251208002146",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1667/volumes/20260323082859-1.129um-0.2m-59keV-masked.zarr/",
+     "store": "PHerc1667/volumes/20260323082859-1.129um-0.2m-59keV-masked.zarr/"
+    }
+   }
+  },
+  "PHerc1667Cr1Fr3": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHerc51Cr4Fr8": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHercMAN5": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20251204111131": {
+     "energy_kev": 78.0,
+     "long_id": "20251204111131-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 1,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20260311104824": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       31640,
+       17495,
+       17495
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260311104824-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251204111131",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercMAN5/volumes/20260311104824-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHercMAN5/volumes/20260311104824-2.399um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHercMANB": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20251203155939": {
+     "energy_kev": 78.0,
+     "long_id": "20251203155939-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20260323091048": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       72681,
+       26723,
+       26723
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260323091048-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251203155939",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercMANB/volumes/20260323091048-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHercMANB/volumes/20260323091048-2.399um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHercMANBp": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20251203091858": {
+     "energy_kev": 78.0,
+     "long_id": "20251203091858-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399
+    },
+    "20251207170127": {
+     "energy_kev": 59.0,
+     "long_id": "20251207170127-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129
+    }
+   },
+   "segments_listed": 11,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {
+    "20251216152116": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       17148,
+       12577,
+       12577
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20251216152116-2.399um-0.2m-78keV",
+     "pixel_size_um": 2.399,
+     "prizes": [],
+     "scan_id": "20251203091858",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercMANBp/volumes/20251216152116-2.399um-0.2m-78keV-masked.zarr/",
+     "store": "PHercMANBp/volumes/20251216152116-2.399um-0.2m-78keV-masked.zarr/"
+    },
+    "20260427100434": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       35024,
+       22137,
+       20286
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 59.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260427100434-1.129um-0.2m-59keV",
+     "pixel_size_um": 1.129,
+     "prizes": [],
+     "scan_id": "20251207170127",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercMANBp/volumes/20260427100434-1.129um-0.2m-59keV-masked.zarr/",
+     "store": "PHercMANBp/volumes/20260427100434-1.129um-0.2m-59keV-masked.zarr/"
+    }
+   }
+  },
+  "PHercParis1Fr34": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHercParis1Fr39": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHercParis2Fr143": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHercParis2Fr47": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {},
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "fragment",
+   "volumes": {}
+  },
+  "PHercParis3": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20260313010827": {
+     "energy_kev": 78.0,
+     "long_id": "20260313010827-2.400um-0.2m-78keV",
+     "pixel_size_um": 2.4
+    }
+   },
+   "segments_listed": 0,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20260427095331": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       68417,
+       42403,
+       42403
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260427095331-2.400um-0.2m-78keV",
+     "pixel_size_um": 2.4,
+     "prizes": [],
+     "scan_id": "20260313010827",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis3/volumes/20260427095331-2.400um-0.2m-78keV-masked.zarr/",
+     "store": "PHercParis3/volumes/20260427095331-2.400um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  },
+  "PHercParis4": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "scans": {
+    "20230205180739": {
+     "energy_kev": 54.0,
+     "long_id": "20230205180739-7.910um-54keV",
+     "pixel_size_um": 7.91
+    },
+    "20230206171837": {
+     "energy_kev": 54.0,
+     "long_id": "20230206171837-7.910um-54keV",
+     "pixel_size_um": 7.91
+    },
+    "20260310152857": {
+     "energy_kev": 74.0,
+     "long_id": "20260310152857-45.532um-11.0m-74keV",
+     "pixel_size_um": 45.532
+    },
+    "20260310160232": {
+     "energy_kev": 110.0,
+     "long_id": "20260310160232-45.532um-11.0m-110keV",
+     "pixel_size_um": 45.532
+    },
+    "20260311024914": {
+     "energy_kev": 78.0,
+     "long_id": "20260311024914-2.400um-0.2m-78keV",
+     "pixel_size_um": 2.4
+    },
+    "20260315072529": {
+     "energy_kev": 137.0,
+     "long_id": "20260315072529-2.400um-0.2m-137keV",
+     "pixel_size_um": 2.4
+    },
+    "20260315102010": {
+     "energy_kev": 78.0,
+     "long_id": "20260315102010-1.129um-0.2m-78keV",
+     "pixel_size_um": 1.129
+    }
+   },
+   "segments_listed": 81,
+   "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json",
+   "type": "scroll",
+   "volumes": {
+    "20230205180739": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       14258,
+       7888,
+       8096
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 54.0,
+     "license": "EduceLab Data License",
+     "long_id": "20230205180739-7.910um-54keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20230205180739",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHercParis4/volumes/20230205180739-7.910um-54keV-masked.zarr/",
+     "store": "samples/PHercParis4/volumes/20230205180739-7.910um-54keV-masked.zarr/"
+    },
+    "20230206171837": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       10529,
+       7812,
+       8316
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 54.0,
+     "license": "EduceLab Data License",
+     "long_id": "20230206171837-7.910um-54keV",
+     "pixel_size_um": 7.91,
+     "prizes": [],
+     "scan_id": "20230206171837",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHercParis4/volumes/20230206171837-7.910um-54keV-masked.zarr/",
+     "store": "samples/PHercParis4/volumes/20230206171837-7.910um-54keV-masked.zarr/"
+    },
+    "20260310170716": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       4071,
+       2264,
+       2264
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 74.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260310170716-45.532um-11.0m-74keV",
+     "pixel_size_um": 45.532,
+     "prizes": [],
+     "scan_id": "20260310152857",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis4/volumes/20260310170716-45.532um-11.0m-74keV-masked.zarr/",
+     "store": "PHercParis4/volumes/20260310170716-45.532um-11.0m-74keV-masked.zarr/"
+    },
+    "20260310173927": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       4066,
+       2264,
+       2264
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 110.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260310173927-45.532um-11.0m-110keV",
+     "pixel_size_um": 45.532,
+     "prizes": [],
+     "scan_id": "20260310160232",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis4/volumes/20260310173927-45.532um-11.0m-110keV-masked.zarr/",
+     "store": "PHercParis4/volumes/20260310173927-45.532um-11.0m-110keV-masked.zarr/"
+    },
+    "20260323153942": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       6625,
+       8431,
+       8431
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 137.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260323153942-2.400um-0.2m-137keV",
+     "pixel_size_um": 2.4,
+     "prizes": [],
+     "scan_id": "20260315072529",
+     "source_url": "https://data.aws.ash2txt.org/samples/PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/",
+     "store": "samples/PHercParis4/volumes/20260323153942-2.400um-0.2m-137keV-masked.zarr/"
+    },
+    "20260411134726": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       75784,
+       32693,
+       32693
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260411134726-2.400um-0.2m-78keV",
+     "pixel_size_um": 2.4,
+     "prizes": [],
+     "scan_id": "20260311024914",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/",
+     "store": "PHercParis4/volumes/20260411134726-2.400um-0.2m-78keV-masked.zarr/"
+    },
+    "20260608103018": {
+     "array": {
+      "chunks": [
+       128,
+       128,
+       128
+      ],
+      "dtype": "|u1",
+      "path": "0",
+      "shape": [
+       59969,
+       36006,
+       32354
+      ]
+     },
+     "checked_at": "2026-09-25T11:34:46Z",
+     "energy_kev": 78.0,
+     "license": "CC BY-NC 4.0",
+     "long_id": "20260608103018-1.129um-0.2m-78keV",
+     "pixel_size_um": 1.129,
+     "prizes": [],
+     "scan_id": "20260315102010",
+     "source_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/",
+     "store": "PHercParis4/volumes/20260608103018-1.129um-0.2m-78keV-masked.zarr/"
+    }
+   }
+  }
+ },
+ "schema": "argus-public-official-survey-v1",
+ "sources": {
+  "catalogue": {
+   "bytes": 1384090,
+   "checked_at": "2026-09-25T11:34:46Z",
+   "sha256": "0eb7df954e66fe07efe7a3552236190baa31a513b02d79799fac0a3f7c2df63f",
+   "url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/metadata.min.json"
+  },
+  "prize_page": {
+   "checked_at": "2026-09-25T11:34:46Z",
+   "sha256": "8b9b34a151fab1beb81f5743e30764a224142136b39b85890deb8e0dc6897f6e",
+   "url": "https://scrollprize.org/prizes"
+  }
+ }
+}

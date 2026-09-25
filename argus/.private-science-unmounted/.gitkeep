@@ -1,0 +1,1 @@
+Empty on purpose. docker-compose.yml mounts this directory read-only at /private-science when ARGUS_PRIVATE_SCIENCE_DIR is not set, so private science material shows as NOT_MOUNTED.

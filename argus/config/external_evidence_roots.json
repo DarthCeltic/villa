@@ -1,0 +1,13 @@
+{
+  "schema": "argus-external-evidence-roots-v1",
+  "why": "Evidence that lives OUTSIDE the repository and outside ARGUS's own state, declared so that it is never silently absent: each item reports AVAILABLE_LOCALLY, NOT_MOUNTED (this process cannot see the root, for instance inside a container) or RECOVERABLE / MISSING (the root is visible and the item is not). ARGUS never writes to an EXTERNAL_READ_ONLY root. This public build declares one neutral example root; replace it with your own.",
+  "roots": [
+    {"id": "example_evidence_root", "path": "<ARGUS_EXTERNAL_EVIDENCE_ROOT>", "class": "EXTERNAL_READ_ONLY",
+     "note": "an example root. Set ARGUS_EXTERNAL_MOUNTS to a JSON object mapping this id to a real directory to see the item below as available; until then it reports NOT_MOUNTED, which means unknown, not lost."}
+  ],
+  "items": [
+    {"id": "example_public_mirror", "root": "example_evidence_root", "rel": "public_mirror", "label": "Example: a local mirror of public open data",
+     "preservation_class": "REHYDRATABLE_PUBLIC_BUCKET",
+     "recovery": {"kind": "PUBLIC_BUCKET", "source": "the public Vesuvius Challenge open-data bucket", "note": "re-fetchable; declare your own roots and items in this file"}}
+  ]
+}

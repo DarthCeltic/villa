@@ -1,0 +1,635 @@
+{
+ "schema": "argus-upstream-sources-v1",
+ "why": "Declarative inventory of every upstream ARGUS depends on, read by argus.core.upstream_discovery and argus.core.provider_updates. A mutable pointer (branch, tag, release channel) is only how a new version is DISCOVERED; execution binds to the immutable revision in admitted_revision. Nothing in this file changes a released run.",
+ "verified_utc": "2026-09-23T13:08:08Z",
+ "areas": {
+  "villa": [
+   {
+    "prefix": "vesuvius/src/vesuvius/ink_detection/inference/",
+    "area": "ink_detection.inference",
+    "capability": "ink_full3d_inference",
+    "io_contract": true
+   },
+   {
+    "prefix": "vesuvius/src/vesuvius/ink_detection/preprocessing/",
+    "area": "ink_detection.chunk_acquisition",
+    "capability": "ink_full3d_inference",
+    "io_contract": true
+   },
+   {
+    "prefix": "vesuvius/src/vesuvius/ink_detection/configs/",
+    "area": "ink_detection.config_schema",
+    "capability": "ink_full3d_inference",
+    "io_contract": true
+   },
+   {
+    "prefix": "vesuvius/src/vesuvius/ink_detection/training/",
+    "area": "ink_detection.training",
+    "capability": "ink_training",
+    "io_contract": false
+   },
+   {
+    "prefix": "vesuvius/src/vesuvius/ink_detection/",
+    "area": "ink_detection.other",
+    "capability": "ink_full3d_inference",
+    "io_contract": false
+   },
+   {
+    "prefix": "vesuvius/src/vesuvius/",
+    "area": "vesuvius.python",
+    "capability": "vesuvius_python",
+    "io_contract": false
+   },
+   {
+    "prefix": "volume-cartographer/apps/",
+    "area": "vc3d.command_line_tools",
+    "capability": "vc3d_geometry_tools",
+    "io_contract": true
+   },
+   {
+    "prefix": "volume-cartographer/core/",
+    "area": "vc3d.core",
+    "capability": "vc3d_geometry_tools",
+    "io_contract": true
+   },
+   {
+    "prefix": "volume-cartographer/",
+    "area": "vc3d.other",
+    "capability": "vc3d_geometry_tools",
+    "io_contract": false
+   },
+   {
+    "prefix": "spiral-fitting/",
+    "area": "spiral_fitting",
+    "capability": "spiral_fitting",
+    "io_contract": true
+   },
+   {
+    "prefix": "lasagna/",
+    "area": "lasagna",
+    "capability": "lasagna",
+    "io_contract": true
+   },
+   {
+    "prefix": "scrollprize.org/",
+    "area": "documentation",
+    "capability": null,
+    "io_contract": false
+   }
+  ],
+  "dependency_files": [
+   "pyproject.toml",
+   "uv.lock",
+   "vesuvius/pyproject.toml",
+   "spiral-fitting/pyproject.toml"
+  ],
+  "licence_files": [
+   "LICENSE",
+   "LICENSE.md",
+   "volume-cartographer/LICENSE"
+  ]
+ },
+ "sources": [
+  {
+   "source_id": "villa-main",
+   "endpoint": "https://github.com/ScrollPrize/villa",
+   "repo": "ScrollPrize/villa",
+   "owner": "ScrollPrize",
+   "classification": "official",
+   "capability_ids": [
+    "surface_tracing",
+    "flattening",
+    "ct_to_surface_sampling",
+    "ink_inference",
+    "bounded_roi_acquisition"
+   ],
+   "source_type": "git_repository",
+   "watched_channel": "main",
+   "admitted_revision": "739eefd71a677bebb983186ae3d0a6bace669934",
+   "license": "MIT",
+   "license_note": "repository root licence is MIT (GitHub licence API); GPL-3.0 applies to the volume-cartographer subtree, which ARGUS runs as an external subprocess and does not link (argus/cli/components.json)",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 3600,
+   "areas_key": "villa",
+   "providers": [
+    "vc3d_geometry_toolchain",
+    "vc_renderer",
+    "native_full_3d_ink"
+   ],
+   "runtime_pin_note": "argus/upstream.lock.json pins 739eefd for the admitted runtime. Later main revisions are candidates until an exact runtime passes the ARGUS adapter and sabotage contracts; existing runs stay on the pinned revision.",
+   "contract": {
+    "files": [
+     {
+      "path": "vesuvius/src/vesuvius/ink_detection/inference/infer_full3d_tifxyz.py",
+      "tokens": [
+       "--plan-only",
+       "--cache-dir",
+       "--cache-max-gb",
+       "--max-target-chunks",
+       "--resolution",
+       "--tta",
+       "--gpus",
+       "volume_source",
+       "x.tif"
+      ]
+     },
+     {
+      "path": "vesuvius/src/vesuvius/ink_detection/preprocessing/download_required_zarr_chunks.py",
+      "tokens": [
+       "--datasets-root",
+       "--volumes-json",
+       "--output-root",
+       "--dry-run",
+       "--patch-size",
+       "--overlap-fraction"
+      ]
+     },
+     {
+      "path": "volume-cartographer/scripts/fiber_merge.py",
+      "tokens": [
+       "adjacent_branches",
+       "BRANCH_ARRAYS"
+      ]
+     },
+     {
+      "path": "vesuvius/src/vesuvius/tifxyz_canvas.py",
+      "tokens": [
+       "def full_resolution_extent",
+       "float32"
+      ]
+     },
+     {
+      "path": "volume-cartographer/apps/src/vc_render_tifxyz.cpp",
+      "tokens": [
+       "accum-type",
+       "beerlambert"
+      ]
+     },
+     {
+      "path": "volume-cartographer/apps/src/vc_zarr_download_region.cpp",
+      "tokens": [
+       "vc_zarr_download_region",
+       "dry-run",
+       "zmin",
+       "zmax",
+       "matchingVolumeEntry"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "source_id": "villa-distilled-3d-ink",
+   "endpoint": "https://github.com/ScrollPrize/villa/tree/distilled_3d_ink",
+   "repo": "ScrollPrize/villa",
+   "owner": "ScrollPrize",
+   "classification": "official",
+   "capability_ids": [
+    "ink_training_distillation"
+   ],
+   "source_type": "git_repository",
+   "watched_channel": "distilled_3d_ink",
+   "channel_kind": "nonmain",
+   "admitted_revision": null,
+   "license": "MIT",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "areas_key": "villa",
+   "providers": [],
+   "note": "the base branch of villa PR #1819 (Hecate EMA checkpoints, merged 5ff00ca0 into this branch, NOT into main). Watched and staged for the record; a revision merged here is never activated (NON_MAIN_CHANNEL) until it reaches main."
+  },
+  {
+   "source_id": "villa-vc3d-release",
+   "endpoint": "https://github.com/ScrollPrize/villa/releases",
+   "repo": "ScrollPrize/villa",
+   "owner": "ScrollPrize",
+   "classification": "official",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "release_artifact",
+   "watched_channel": "latest",
+   "admitted_revision": null,
+   "license": "MIT",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "vc3d_geometry_toolchain"
+   ],
+   "note": "rolling releases `latest` and `stable`; assets VC3D-<sha>-<date>-{linux-x86_64.AppImage, macos-arm64.dmg, macos-arm64.zip, win64.exe, win64.zip}. NOT VERIFIED whether the packaged builds include the command-line tools (vc_render_tifxyz); the Docker image does."
+  },
+  {
+   "source_id": "villa-vc3d-docker",
+   "endpoint": "ghcr.io/scrollprize/villa/volume-cartographer",
+   "repo": "ScrollPrize/villa",
+   "owner": "ScrollPrize",
+   "classification": "official",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "container_image",
+   "watched_channel": "edge",
+   "admitted_revision": null,
+   "license": "MIT",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "vc3d_geometry_toolchain"
+   ],
+   "note": "tag `edge` is a mutable pointer; a scientific pin must be an image digest. No digest is admitted yet, so this source cannot back a scientific run."
+  },
+  {
+   "source_id": "hf-ink-3d-dino-guided",
+   "endpoint": "https://huggingface.co/scrollprize/ink_3d_dino_guided",
+   "repo": "scrollprize/ink_3d_dino_guided",
+   "owner": "scrollprize",
+   "classification": "official",
+   "capability_ids": [
+    "ink_inference"
+   ],
+   "source_type": "model_repository",
+   "watched_channel": "main",
+   "admitted_revision": "73a79525466037432191284dfa237baf830c49ec",
+   "license": "mit",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "ink_3d_dino_guided",
+    "native_full_3d_ink"
+   ]
+  },
+  {
+   "source_id": "hf-hecate",
+   "endpoint": "https://huggingface.co/scrollprize/hecate",
+   "repo": "scrollprize/hecate",
+   "owner": "scrollprize",
+   "classification": "official",
+   "capability_ids": [
+    "ink_inference"
+   ],
+   "source_type": "model_repository",
+   "watched_channel": "main",
+   "admitted_revision": "9cb86e500e944b11a06a7020403cde5dffb5bcb2",
+   "license": "mit",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "hecate_24um",
+    "hecate_96um"
+   ]
+  },
+  {
+   "source_id": "hf-fiber-ink-4class",
+   "endpoint": "https://huggingface.co/scrollprize/fiber_ink_4class_selfdistill",
+   "repo": "scrollprize/fiber_ink_4class_selfdistill",
+   "owner": "scrollprize",
+   "classification": "official",
+   "capability_ids": [
+    "ink_inference"
+   ],
+   "source_type": "model_repository",
+   "watched_channel": "main",
+   "admitted_revision": "ec9bbc4dbc65a052fc4d78429f7ce5eff080aafe",
+   "license": "mit",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "fiber_ink_4class_selfdistill"
+   ]
+  },
+  {
+   "source_id": "hf-surface-recto",
+   "endpoint": "https://huggingface.co/scrollprize/surface_recto",
+   "repo": "scrollprize/surface_recto",
+   "owner": "scrollprize",
+   "classification": "official",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "model_repository",
+   "watched_channel": "main",
+   "admitted_revision": "86f026f8be537db336e2854650db0b40c004ad49",
+   "license": "apache-2.0",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "surface_recto"
+   ]
+  },
+  {
+   "source_id": "hf-hercunet-v0",
+   "endpoint": "https://huggingface.co/jimmylomro/hercunet-v0",
+   "repo": "jimmylomro/hercunet-v0",
+   "owner": "jimmylomro",
+   "classification": "community",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "model_repository",
+   "watched_channel": "main",
+   "admitted_revision": "5cbc6f42df3da301310679e9a7c76a5f1f682897",
+   "license": null,
+   "license_note": "the Hub reports no licence tag for the weights (MIT code, model licence undeclared)",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "hercunet_v0"
+   ]
+  },
+  {
+   "source_id": "github-hercunet-code",
+   "endpoint": "https://github.com/jimmylomro/hercUNet",
+   "repo": "jimmylomro/hercUNet",
+   "owner": "jimmylomro",
+   "classification": "community",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "git_repository",
+   "watched_channel": "main",
+   "admitted_revision": "100b828fd88a66cf6e799d119a086b8f5c1897a1",
+   "license": "MIT",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "areas_key": null,
+   "providers": [
+    "hercunet_v0"
+   ]
+  },
+  {
+   "source_id": "community-hercunet-full-volume-predictions",
+   "endpoint": "https://dl.ash2txt.org/community-uploads/jamie/hercunet_v0/",
+   "owner": "jimmylomro",
+   "classification": "community",
+   "capability_ids": [
+    "surface_tracing"
+   ],
+   "source_type": "dataset_catalogue",
+   "watched_channel": "latest",
+   "admitted_revision": null,
+   "license": null,
+   "license_note": "redistribution and output licence were not declared by the uploader",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "hercunet_v0"
+   ],
+   "note": "Download wiring only. Every pass remains PARTIAL_UNVERIFIED until a complete key inventory and hashes are recorded; no automatic transfer or scientific promotion."
+  },
+  {
+   "source_id": "github-inksurf",
+   "endpoint": "https://github.com/BioMarco/Inksurf",
+   "repo": "BioMarco/Inksurf",
+   "owner": "BioMarco",
+   "classification": "community",
+   "capability_ids": [
+    "review_active_learning"
+   ],
+   "source_type": "git_repository",
+   "watched_channel": "main",
+   "admitted_revision": "2d03eebb375db6db23a9d223a973f4bc5eb6438a",
+   "license": "MIT",
+   "auto_promotion_allowed": false,
+   "required_tests": [],
+   "check_interval_s": 21600,
+   "providers": [
+    "inksurf_audit"
+   ]
+  }
+ ],
+ "watchlist": [
+  {
+   "id": "villa#1821",
+   "repo": "ScrollPrize/villa",
+   "number": 1821,
+   "title": "Tutorial 5 on a 6 GB GPU: flat-path chunk selection",
+   "argus_status": "OPEN",
+   "affects": [
+    "native_full_3d_ink",
+    "flat_ink_training"
+   ],
+   "why": "adds select_flat_training_chunks, a smaller level-0 chunk selection for flat-path training; not on main",
+   "adoption_condition": "lands on main and the selector passes the adapter contract"
+  },
+  {
+   "id": "villa#1829",
+   "repo": "ScrollPrize/villa",
+   "number": 1829,
+   "title": "VC3D line annotation: adjacent link candidates",
+   "argus_status": "MERGED",
+   "merge_commit": "f07d33be6a00d12ace7d6a9465efe17c78ed7b47",
+   "affects": [
+    "fiber_annotations"
+   ],
+   "why": "merged: adjacent links live in their own top-level adjacent_branches array; array presence is the compatibility signal (absent = legacy writer, present-empty = none on purpose); ARGUS implements the merged semantics in argus/core/fiber_annotations.py and refuses any write that drops a non-empty array",
+   "adoption_condition": "staged through the update lifecycle at f07d33be (adapter contract incl. fiber_merge.py and its sabotage self-check); a runtime rebuild is still required before any built tool carries it"
+  },
+  {
+   "id": "villa#1823",
+   "repo": "ScrollPrize/villa",
+   "number": 1823,
+   "title": "normalgridtools: score the umbilicus with a weighted sum, not a weighted mean",
+   "argus_status": "MERGED",
+   "merge_commit": "8839ed689ff5116a5bc39f7cb4d8b15dda990203",
+   "affects": [
+    "signed_normal"
+   ],
+   "why": "merged to main on 2026-09-21: replaces an unbounded far-field failure with a bounded bias toward the denser side; an estimator input only, never a sole source of normal sign",
+   "adoption_condition": "a pinned runtime rebuild and the ARGUS normal-sign controls pass without raising sign confidence by itself"
+  },
+  {
+   "id": "villa#1828",
+   "repo": "ScrollPrize/villa",
+   "number": 1828,
+   "title": "Fix double decoding of compressed Zarr shards",
+   "argus_status": "MERGED",
+   "merge_commit": "a91475bade2e166685a56f425f84fde54843d1dc",
+   "affects": [
+    "raw_ct_acquisition",
+    "vc3d_chunk_cache"
+   ],
+   "why": "merged to main on 2026-09-21: whole-shard cache reads no longer decompress or byte-swap an extracted chunk twice",
+   "adoption_condition": "a pinned VC3D runtime rebuild and byte-identical compressed-shard control pass"
+  },
+  {
+   "id": "villa#1701",
+   "repo": "ScrollPrize/villa",
+   "number": 1701,
+   "title": "patch_cache: notice a label that changed under the same path",
+   "argus_status": "MERGED",
+   "merge_commit": "12d88a4440dbefa71bab80c70840675bbdba2daa",
+   "affects": [
+    "ink_training",
+    "label_cache"
+   ],
+   "why": "merged to main on 2026-09-21: cached labels are invalidated when content changes without a path change",
+   "adoption_condition": "the label-cache identity contract and stale-label sabotage test pass at the new pin"
+  },
+  {
+   "id": "villa#1695",
+   "repo": "ScrollPrize/villa",
+   "number": 1695,
+   "title": "vc_render_tifxyz: do not treat torn per-slice TIFFs as finished output",
+   "argus_status": "MERGED",
+   "merge_commit": "c4902849470a2e4005c8492120007280f087d636",
+   "affects": [
+    "vc_renderer"
+   ],
+   "why": "merged to main on 2026-09-21: truncated TIFF slices are repaired instead of accepted as completed output",
+   "adoption_condition": "the pinned renderer rebuild passes torn-output sabotage and real render parity"
+  },
+  {
+   "id": "villa#1676",
+   "repo": "ScrollPrize/villa",
+   "number": 1676,
+   "title": "VcDataset: refuse a region that extends past the dataset, and make callers check it",
+   "argus_status": "MERGED",
+   "merge_commit": "0613503c384cf2c2545f176163afdcfb26716afc",
+   "affects": [
+    "bounded_roi_acquisition",
+    "vc3d_geometry_tools"
+   ],
+   "why": "merged to main on 2026-09-22: out-of-bounds regions refuse instead of being treated as readable",
+   "adoption_condition": "the pinned runtime rebuild passes exact-edge, one-past-edge and negative-bound controls"
+  },
+  {
+   "id": "villa#1682",
+   "repo": "ScrollPrize/villa",
+   "number": 1682,
+   "title": "zarr_tasks: create_level_dataset works under zarr 3",
+   "argus_status": "MERGED",
+   "merge_commit": "d285029ab6b62bfacf12cdb41bd4653867db73c0",
+   "affects": [
+    "zarr_tasks",
+    "multiscale_generation"
+   ],
+   "why": "merged to main on 2026-09-22: level creation uses APIs compatible with Zarr 3",
+   "adoption_condition": "the separate Villa runtime rebuild passes Zarr 2 and Zarr 3 contract fixtures"
+  },
+  {
+   "id": "villa#1819",
+   "repo": "ScrollPrize/villa",
+   "number": 1819,
+   "title": "Train and distill Hecate with Hub-compatible EMA checkpoints",
+   "argus_status": "MERGED_TO_NONMAIN_BRANCH",
+   "tracks": "villa-distilled-3d-ink",
+   "base_branch": "distilled_3d_ink",
+   "merge_commit": "5ff00ca01bdaa5dec7e4d7fb4dd1171d096fdb59",
+   "affects": [
+    "hecate_24um",
+    "hecate_96um"
+   ],
+   "why": "merged on 2026-09-19 into the base branch distilled_3d_ink as 5ff00ca0, NOT into Villa main; training/distillation candidate only",
+   "adoption_condition": "the change reaches main and the exposure of the produced checkpoints is declared; until then it can be staged but never activated"
+  },
+  {
+   "id": "villa#1818",
+   "repo": "ScrollPrize/villa",
+   "number": 1818,
+   "title": "Bicubic interpolation for vc_render_tifxyz",
+   "argus_status": "OPEN",
+   "affects": [
+    "vc_renderer",
+    "renderer_parity"
+   ],
+   "why": "adds --surface-interpolation bicubic to the renderer",
+   "adoption_condition": "lands on main and a pinned renderer parity check passes"
+  },
+  {
+   "id": "villa#1772",
+   "repo": "ScrollPrize/villa",
+   "number": 1772,
+   "title": "native full-3D inference must honour the checkpoint input_pad_depth_to",
+   "argus_status": "OPEN",
+   "affects": [
+    "native_full_3d_ink"
+   ],
+   "why": "known defect: the current native full-3D inference does not pass input_pad_depth_to into the model",
+   "adoption_condition": "lands on main; then re-run the native full-3D contract and sabotage tests"
+  },
+  {
+   "id": "villa#1799",
+   "repo": "ScrollPrize/villa",
+   "number": 1799,
+   "title": "vesuvius.train: generate configured auxiliary targets",
+   "argus_status": "OPEN",
+   "affects": [
+    "ink_training"
+   ],
+   "why": "auxiliary targets are otherwise trained against nothing (loss 0.0000)",
+   "adoption_condition": "lands on main"
+  },
+  {
+   "id": "villa#1824",
+   "repo": "ScrollPrize/villa",
+   "number": 1824,
+   "title": "finalize_outputs: main() referenced a parser it never bound",
+   "argus_status": "OPEN",
+   "affects": [
+    "finalize_outputs"
+   ],
+   "why": "the finalize_outputs CLI crashes with a NameError",
+   "adoption_condition": "lands on main; ARGUS does not call this CLI until then"
+  },
+  {
+   "id": "villa#1825",
+   "repo": "ScrollPrize/villa",
+   "number": 1825,
+   "title": "finalize_outputs: quantise multiclass output on chunk-independent scales",
+   "argus_status": "OPEN",
+   "affects": [
+    "finalize_outputs"
+   ],
+   "why": "multiclass output scaling depends on chunk contents",
+   "adoption_condition": "lands on main"
+  },
+  {
+   "id": "villa#1826",
+   "repo": "ScrollPrize/villa",
+   "number": 1826,
+   "title": "finalize_outputs: skip output chunks with no input data",
+   "argus_status": "OPEN",
+   "affects": [
+    "finalize_outputs"
+   ],
+   "why": "finalize time on sparse outputs is dominated by chunks with no input data",
+   "adoption_condition": "lands on main"
+  },
+  {
+   "id": "villa#1817",
+   "repo": "ScrollPrize/villa",
+   "number": 1817,
+   "title": "vc_render_tifxyz: fail with an error instead of a core dump when a chunk fails",
+   "argus_status": "OPEN",
+   "affects": [
+    "vc_renderer"
+   ],
+   "why": "remote render failures currently core-dump; ARGUS treats a non-zero or absent output as a refusal either way",
+   "adoption_condition": "lands on main"
+  },
+  {
+   "id": "villa#1707",
+   "repo": "ScrollPrize/villa",
+   "number": 1707,
+   "title": "vc_zarr_download_region command",
+   "argus_status": "MERGED",
+   "merge_commit": "30fa0c3a15fdc8d98e347c18a040605862b72302",
+   "affects": [
+    "bounded_roi_acquisition"
+   ],
+   "why": "merged to main on 2026-09-22: bounded VC3D region download of an explicit volume bbox into the VC3D cache",
+   "adoption_condition": "a pinned VC3D runtime rebuild plus the ARGUS source, volume, bbox, byte-ceiling, destination and receipt identity contract; until then ARGUS keeps using its own governed acquisition adapter"
+  }
+ ]
+}

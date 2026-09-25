@@ -1,0 +1,6 @@
+{
+  "schema": "argus-science-intake-lock-v1",
+  "note": "No science imports are locked in the public build: the register is empty, so nothing is verified, mounted or promoted.",
+  "imports": [],
+  "next_authorized_experiment": null
+}

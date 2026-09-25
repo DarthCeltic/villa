@@ -1,0 +1,152 @@
+# ARGUS containerised stack: three services.
+#
+# observe   the read-only service (published on 127.0.0.1:18787 only).
+# command   the governed-write service. It is not published to the host: it is reachable only from `ui`
+#           over the compose network, and every route but /health needs a bearer token that is generated
+#           on first start and stored in a named volume, never in an image or in this file.
+# ui        nginx serving the built interface, plus the UI transport (loopback-only, inside the same
+#           container). Published on 127.0.0.1:8792 only.
+#
+# ARGUS_REPO=/app in every service: the source is baked into the image. artifacts/ is bind-mounted over
+# the baked-in tree so receipts the containers write land in the host-visible repository; corpus/ is
+# mounted read-only. Both directories exist in the repository so Docker never creates them root-owned.
+# ARGUS_PRIVATE_SCIENCE_DIR may name a directory of private material to mount read-only at
+# /private-science; when it is unset an empty directory is mounted and that material shows as not mounted.
+# The containers have no GPU passthrough: GPU stages need a native install and say so.
+
+services:
+  observe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: service
+    command: ["observe", "--host", "0.0.0.0"]
+    environment:
+      ARGUS_REPO: /app
+      ARGUS_PORT: "8787"
+      ARGUS_HOME: /argus-home
+      ARGUS_UPSTREAM_FIXTURE: "${ARGUS_UPSTREAM_FIXTURE:-}"
+      ARGUS_PRIVATE_SCIENCE_ROOT: /private-science
+      ARGUS_OBSERVE_WS_ORIGINS: "${ARGUS_OBSERVE_WS_ORIGINS:-}"
+      ARGUS_PROFILE: "${ARGUS_PROFILE:-}"
+      ARGUS_HEAVY_WORKERS: "${ARGUS_HEAVY_WORKERS:-}"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./corpus:/app/corpus:ro
+      - ${ARGUS_PRIVATE_SCIENCE_DIR:-./.private-science-unmounted}:/private-science:ro
+      - type: volume
+        source: argus_science
+        target: /argus-home/science
+        read_only: true
+    ports:
+      # Host-side 18787, not 8787, so this container's observe never collides with a native
+      # `python -m argus.serve observe` on the conventional 127.0.0.1:8787. The container's OWN
+      # internal port stays 8787, matching ARGUS_PORT and every in-network reference (nginx's
+      # proxy_pass http://observe:8787 is unaffected: container-to-container traffic never
+      # touches the host port mapping).
+      - "127.0.0.1:18787:8787"
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:8787/api/live', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+    # None of the three needs any Linux capability: they run as a non-root user and bind only unprivileged ports.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  command:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: service
+    command: ["command", "--host", "0.0.0.0"]
+    environment:
+      ARGUS_REPO: /app
+      ARGUS_COMMAND_PORT: "8788"
+      ARGUS_HOME: /argus-home
+      ARGUS_UPSTREAM_FIXTURE: "${ARGUS_UPSTREAM_FIXTURE:-}"
+      ARGUS_COMMAND_TOKEN_FILE: /argus-home/state/command_token
+      ARGUS_PRIVATE_SCIENCE_ROOT: /private-science
+      ARGUS_UI_ACCESS_KEY_FILE: /argus-home/state/ui_access_key
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./corpus:/app/corpus:ro
+      - type: volume
+        source: argus_state
+        target: /argus-home/state
+      - ${ARGUS_PRIVATE_SCIENCE_DIR:-./.private-science-unmounted}:/private-science:ro
+      - type: volume
+        source: argus_science
+        target: /argus-home/science
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:8788/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+    # None of the three needs any Linux capability: they run as a non-root user and bind only unprivileged ports.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ui
+    environment:
+      ARGUS_REPO: /app
+      ARGUS_COMMAND_BASE: http://command:8788
+      ARGUS_HOME: /argus-home
+      ARGUS_COMMAND_TOKEN_FILE: /argus-home/state/command_token
+      ARGUS_UI_ACCESS_KEY_FILE: /argus-home/state/ui_access_key
+      ARGUS_UI_TRANSPORT_PORT: "8789"
+      ARGUS_BFF_AUDIT: /argus-home/bff/bff_audit.jsonl
+    volumes:
+      - type: volume
+        source: argus_state
+        target: /argus-home/state
+        read_only: true
+      - type: volume
+        source: argus_bff
+        target: /argus-home/bff
+    ports:
+      - "127.0.0.1:8792:8792"
+    depends_on:
+      command:
+        condition: service_healthy
+      observe:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request as u; u.urlopen('http://127.0.0.1:8792/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+    # None of the three needs any Linux capability: they run as a non-root user and bind only unprivileged ports.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+volumes:
+  # Named, not bind-mounted: holds the command-service bearer token (generated on first start,
+  # never embedded in the image or in this file) plus jobs/audit-log state. Persists across
+  # `docker compose down`/`up`; only removed by an explicit `docker compose down -v`.
+  argus_state:
+  # Attachment records and blinded-review answers (small JSON lines; never scan data). Written by
+  # `command`, read-only in `observe`, kept apart from argus_state so observe never sees the token.
+  argus_science:
+  # The UI transport's own audit of governed actions (what was asked, in which session, with what result). Kept apart from argus_state so the ui
+  # container can hold the command token read-only and still write its audit.
+  argus_bff:

@@ -1,0 +1,3 @@
+# Files are stored and checked out byte-for-byte, so RELEASE_MANIFEST.json verifies on every
+# platform regardless of core.autocrlf.
+* -text

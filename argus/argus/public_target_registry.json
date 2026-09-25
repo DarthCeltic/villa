@@ -1,0 +1,289 @@
+{
+  "schema": "argus-public-target-registry-v1",
+  "id": "ARGUS-PUBLIC-TARGET-REGISTRY-V1",
+  "derived_from": {
+    "file": "argus/public_official_survey.json",
+    "generator": "scripts/refresh_official_survey.py",
+    "checked_at": "2026-09-25T11:34:46Z",
+    "note": "derived; the survey is the source of truth. `scan_id` on a target row is the official VOLUME id the prize page lists."
+  },
+  "source": {
+    "url": "https://scrollprize.org/prizes",
+    "sha256": "8b9b34a151fab1beb81f5743e30764a224142136b39b85890deb8e0dc6897f6e",
+    "read_only": true
+  },
+  "sets": {
+    "FIRST_LETTERS": {
+      "count": 22,
+      "scrolls": [
+        "PHerc0125",
+        "PHerc0175A",
+        "PHerc0175B",
+        "PHerc0191",
+        "PHerc0211",
+        "PHerc0257",
+        "PHerc0268",
+        "PHerc0306B",
+        "PHerc0343",
+        "PHerc0358",
+        "PHerc0483A",
+        "PHerc0483B",
+        "PHerc0490A",
+        "PHerc0490B",
+        "PHerc0800",
+        "PHerc0813",
+        "PHerc0826",
+        "PHerc0846A",
+        "PHerc0846B",
+        "PHerc1203",
+        "PHerc1218",
+        "PHerc1545"
+      ]
+    },
+    "GRAND_PRIZE_2027": {
+      "count": 13,
+      "scrolls": [
+        "PHerc0125",
+        "PHerc0191",
+        "PHerc0211",
+        "PHerc0257",
+        "PHerc0268",
+        "PHerc0358",
+        "PHerc0800",
+        "PHerc0813",
+        "PHerc0826",
+        "PHerc1203",
+        "PHerc1218",
+        "PHerc1447",
+        "PHerc1545"
+      ]
+    },
+    "rule": "Different prizes, different eligibility. Never merge them into one eligible list; neither is a subset of the other."
+  },
+  "special_lanes": {
+    "PARIS4_TITLE": [
+      "PHercParis4"
+    ]
+  },
+  "targets": [
+    {
+      "scroll": "PHerc0125",
+      "scan_id": "20250821151825",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0175A",
+      "scan_id": "20250521115057",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0175B",
+      "scan_id": "20250521125822",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0191",
+      "scan_id": "20250821151635",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0211",
+      "scan_id": "20250821151803",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0257",
+      "scan_id": "20250821151750",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0268",
+      "scan_id": "20251110183117",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0306B",
+      "scan_id": "20250521133212",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0343",
+      "scan_id": "20250521140437",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0358",
+      "scan_id": "20250821151737",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0483A",
+      "scan_id": "20250521140913",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0483B",
+      "scan_id": "20251124083638",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0490A",
+      "scan_id": "20250521151210",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0490B",
+      "scan_id": "20250521151215",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0800",
+      "scan_id": "20250521135224",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc0813",
+      "scan_id": "20250821151723",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0826",
+      "scan_id": "20250821151701",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0846A",
+      "scan_id": "20250728152254",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc0846B",
+      "scan_id": "20250804142305",
+      "prizes": [
+        "FIRST_LETTERS"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc1203",
+      "scan_id": "20250820131727",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    },
+    {
+      "scroll": "PHerc1218",
+      "scan_id": "20250521120456",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc1447",
+      "scan_id": "20250521151220",
+      "prizes": [
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 8.64,
+      "energy_kev": 116
+    },
+    {
+      "scroll": "PHerc1545",
+      "scan_id": "20250821151648",
+      "prizes": [
+        "FIRST_LETTERS",
+        "GRAND_PRIZE_2027"
+      ],
+      "pitch_um": 9.362,
+      "energy_kev": 113
+    }
+  ]
+}

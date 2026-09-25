@@ -1,0 +1,11 @@
+# ARGUS synthetic geometry control: a square with one UV island.
+o argus_surface_control
+v 0.0 0.0 0.0
+v 1.0 0.0 0.0
+v 1.0 1.0 0.0
+v 0.0 1.0 0.0
+vt 0.0 0.0
+vt 1.0 0.0
+vt 1.0 1.0
+vt 0.0 1.0
+f 1/1 2/2 3/3 4/4

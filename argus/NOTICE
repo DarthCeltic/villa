@@ -1,0 +1,113 @@
+ARGUS
+Copyright 2026 DarthCeltic
+
+This product includes software developed by DarthCeltic.
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+The legal copyright holder is named in LICENSE. Everywhere else -- including this file, the
+documentation and the interface -- the project is attributed to DarthCeltic.
+
+--------------------------------------------------------------------------------
+SCOPE OF THE APACHE-2.0 GRANT
+--------------------------------------------------------------------------------
+
+The Apache-2.0 grant covers ARGUS-owned source code only. It does NOT cover, and
+cannot relicense:
+
+  * CT scan data, surface volumes, meshes, or anything derived from a scan.
+    These carry the Vesuvius Challenge / ScrollPrize data terms (CC BY-NC 4.0 for
+    the open data releases) and inherit those terms regardless of what this
+    repository's LICENSE says. Derived artifacts inherit; a permissive licence on
+    the code that produced them does not launder the source.
+
+  * Ink labels and competition data. These carry their own terms.
+
+  * Model weights and checkpoints. No checkpoint is covered by this grant. A
+    checkpoint with NO DECLARED LICENCE is recorded as UNDECLARED rather than
+    assumed permissive, and `argus setup` refuses to acquire it without explicit
+    operator acceptance.
+
+  * External tools ARGUS invokes as subprocesses. See below.
+
+--------------------------------------------------------------------------------
+EXTERNAL TOOLS -- RUN, NOT INCORPORATED
+--------------------------------------------------------------------------------
+
+volume-cartographer / VC3D                                 GPL-3.0
+    https://github.com/educelab/volume-cartographer
+
+    ARGUS invokes these binaries as EXTERNAL SUBPROCESSES. No implementation,
+    no tests and no distinctive structure are copied into ARGUS. Running a
+    GPL-3.0 program is not redistribution of it; vendoring its source into a
+    differently-licensed project would be, and ARGUS does not do that.
+
+    Verified rather than asserted: no .cpp/.cc/.h/.cmake/CMakeLists file is
+    tracked anywhere in this repository, and no tracked file carries a GPL
+    header. If a build ever DISTRIBUTES a VC3D binary, the GPL-3.0 source-offer
+    obligation attaches to that distribution -- invoking a locally installed
+    binary does not trigger it.
+
+Villa (Vesuvius Challenge tooling)                         MIT
+    https://github.com/ScrollPrize/villa
+
+    No villa source is copied into this repository, and ARGUS does not import the
+    villa `vesuvius` package. It reads villa's public git history for its status
+    view and can run a separately installed villa toolchain as an external program.
+    The villa notice is reproduced here for that interoperability:
+
+    Copyright (c) 2024 Vesuvius Challenge. Licensed under the MIT License.
+
+nnU-Net                                                     Apache-2.0
+    https://github.com/MIC-DKFZ/nnUNet
+
+--------------------------------------------------------------------------------
+PERMISSIVE DEPENDENCIES
+--------------------------------------------------------------------------------
+
+Apache-2.0   torch, timm, requests, playwright, huggingface_hub, nnunetv2
+BSD          numpy, scipy, tifffile, s3fs, fsspec, psutil, uvicorn
+MIT          zarr, numcodecs, fastapi, pytest, PyYAML, keyring, vesuvius (villa)
+
+Each retains its own licence; none is relicensed by this NOTICE.
+
+--------------------------------------------------------------------------------
+BRAND
+--------------------------------------------------------------------------------
+
+The ARGUS name and marks (argus-logo-primary.png, argus-mark.png,
+argus-app-icon.png) are not licensed under Apache-2.0. The Apache-2.0 grant
+covers code, not trademarks, and section 6 of the licence explicitly withholds
+trademark rights.
+
+Third-party project marks are NOT reproduced in ARGUS. Those projects are
+credited by name and link instead, because a permissive code licence is not a
+trademark licence and displaying a mark can imply an endorsement that was never
+given. See ACKNOWLEDGEMENTS.md, which is generated from the attribution registry
+so that a component cannot silently drop out of the credits.
+
+--------------------------------------------------------------------------------
+THIS IS AN ENGINEERING AUDIT, NOT LEGAL ADVICE
+--------------------------------------------------------------------------------
+
+The classifications above were produced by reading files, headers, dependency
+metadata and upstream LICENSE files. They represent
+engineering diligence. They are not a legal opinion and have not been reviewed
+by counsel.
+
+--------------------------------------------------------------------------------
+PLACEMENT INSIDE THE VILLA MONOREPO
+--------------------------------------------------------------------------------
+
+When this tree sits in a monorepo as the `argus/` subproject (the ScrollPrize/villa repository, which
+is MIT-licensed), the two licences coexist by directory:
+
+  * Everything under `argus/` is ARGUS and is licensed Apache-2.0 by the LICENSE file in `argus/`,
+    which is the licence text that governs it. The MIT LICENSE at the monorepo root does not apply to
+    these files, and this NOTICE and LICENSE are not a relicensing of anything outside `argus/`.
+  * Third-party code that ARGUS uses or adapts is listed with its licence in THIRD_PARTY_ACKNOWLEDGEMENTS.md
+    and docs/ACKNOWLEDGEMENTS.md; those lists, not this section, are authoritative for it.
+  * Apache-2.0 and MIT are compatible: a reader may combine ARGUS code with MIT code, and the combined
+    work must keep both notices. Apache-2.0 additionally carries an express patent grant and asks that
+    this NOTICE travel with redistributions.
+  * The data and label terms above (Vesuvius Challenge / ScrollPrize data terms) apply to data
+    regardless of which subdirectory the code that touched it lives in.

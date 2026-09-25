@@ -1,0 +1,116 @@
+
+html .argus-main > .argus-context {
+  max-width: 1480px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding-inline: clamp(18px, 2.4vw, 42px);
+}
+
+.build-mismatch {
+  display: grid;
+  gap: 5px;
+  max-width: 1480px;
+  margin: 0 auto var(--s-3);
+  padding: 12px 16px;
+  border: 1px solid var(--bad);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bad) 12%, var(--bg-raised));
+  color: var(--ink);
+}
+.build-mismatch strong { color: var(--bad); }
+.build-mismatch-detail { color: var(--ink-dim); font-size: var(--t-small); overflow-wrap: anywhere; }
+.wb-truth-error {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border: 1px solid var(--bad);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bad) 10%, var(--bg-raised));
+}
+.wb-truth-error strong { color: var(--bad); }
+.wb-truth-error span { color: var(--ink-dim); }
+
+
+html .grail-diary:not([data-collapsed="true"]):not([data-zone="TOP"]):not([data-zone="BOTTOM"]) {
+  max-width: min(420px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--masthead-h, 86px) - 24px);
+}
+html .grail-diary[data-zone="SHEET"][data-sheet]:not([data-collapsed="true"]) {
+  width: 100%;
+  max-width: none;
+}
+html .grail-diary[data-zone="TOP"]:not([data-collapsed="true"]),
+html .grail-diary[data-zone="BOTTOM"]:not([data-collapsed="true"]) {
+  max-width: none;
+  max-height: min(70vh, 680px);
+}
+
+html .grail-diary-page {
+  overscroll-behavior: contain;
+}
+
+html[data-wb-focus="true"] .argus-masthead,
+html[data-wb-focus="true"] .rail-nav,
+html[data-wb-focus="true"] .pb,
+html[data-wb-focus="true"] .argus-context,
+html[data-wb-focus="true"] [data-wb-chrome="true"] {
+  display: none;
+}
+
+html .system-tabs,
+html .ops-controls,
+html .home-buttons,
+html .ex-toolbar {
+  min-width: 0;
+  max-width: 100%;
+}
+
+html .system-tabs,
+html .ops-controls {
+  flex-wrap: wrap;
+}
+
+html .ops-list,
+html .ops-ladder,
+html .home-claims,
+html .ex-grid,
+html .home-grid,
+html .pipeline-narrative-list,
+html .leaderboard-list {
+  min-width: 0;
+}
+
+.leaderboard-list { display: grid; gap: 10px; margin-top: 18px; }
+.leaderboard-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--panel-2, var(--panel));
+}
+.leaderboard-row h3 { margin: 4px 0 6px; }
+.leaderboard-row p:not(.eyebrow), .room-lede, .room-note { color: var(--muted); line-height: 1.5; }
+.leaderboard-result { max-width: 280px; color: var(--status-active); font-size: var(--t-small); font-weight: 700; text-align: right; }
+@media (max-width: 700px) {
+  .leaderboard-row { display: block; }
+  .leaderboard-result { display: block; margin-top: 12px; text-align: left; }
+}
+
+html .ops-note,
+html .ops-item-body,
+html .home-claims .small,
+html .ex-why-prose {
+  max-width: var(--prose-max, 72ch);
+}
+
+@media (max-width: 760px) {
+  html .argus-main > .argus-context { padding-inline: 12px; }
+
+  html .grail-diary:not([data-collapsed="true"]) {
+    max-width: calc(100vw - 16px);
+  }
+}

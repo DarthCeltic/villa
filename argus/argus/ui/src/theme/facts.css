@@ -1,0 +1,62 @@
+.sf {
+  min-width: 0;
+  max-width: 100%;
+  margin: var(--s-5) 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-raised, transparent);
+  padding: var(--s-4);
+}
+.sf-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2) var(--s-4); }
+.sf-title { margin: 0; font-size: 1.15rem; }
+.sf-lede { margin: 0; color: var(--ink-dim); max-width: 70ch; }
+.sf-empty { color: var(--ink-dim); }
+.sf-scroll { overflow-x: auto; margin-top: var(--s-3); width: 100%; max-width: 100%; contain: inline-size; }
+.sf-table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 14.5px; }
+.sf-table th, .sf-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--s-2) var(--s-3);
+  border-bottom: 1px solid var(--line-soft);
+}
+.sf-table thead th {
+  color: var(--ink-faint);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.sf-table tbody tr[data-selected="true"] { outline: 1px solid var(--accent); outline-offset: -1px; }
+.sf-name {
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 2px 0;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.sf-name[aria-pressed="true"] { color: var(--accent); }
+.sf-cell[data-tone="ok"] { color: var(--ok); }
+.sf-cell[data-tone="warn"] { color: var(--warn); }
+.sf-cell[data-tone="bad"] { color: var(--bad); }
+.sf-cell[data-tone="idle"] { color: var(--ink-dim); }
+.sf-cell a { color: inherit; }
+.sf-unknown {
+  display: inline-block;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  padding: 0 6px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 4px;
+  color: var(--ink);
+}
+.sf-list { margin: 0; display: grid; gap: var(--s-2); }
+.sf-list-row { display: grid; grid-template-columns: minmax(9rem, 12rem) 1fr; gap: var(--s-3); }
+.sf-list-row dt { font-weight: 600; }
+.sf-list-row dd { margin: 0; }
+@media (max-width: 760px) {
+  .sf-list-row { grid-template-columns: 1fr; gap: 2px; }
+}

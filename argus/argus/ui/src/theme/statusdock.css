@@ -1,0 +1,88 @@
+
+.sdock {
+  position: fixed;
+  right: 22px;
+  bottom: 14px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg, #0d0b09) 78%, transparent);
+  border: 1px solid var(--line-strong, #443626);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+html[data-diary-dock="BOTTOM"] .sdock,
+html[data-diary-dock="SHEET"] .sdock { bottom: calc(14px + var(--diary-extent, 0px)); }
+
+
+html:not([data-diary-dock="BOTTOM"]):not([data-diary-dock="SHEET"]) .argus-main:not([data-route-scroll="own"]) > :last-child {
+  margin-bottom: 88px;
+}
+
+.sdock-feed {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px 0 10px;
+  border-radius: 999px;
+  font-size: var(--t-body, 15px);
+  color: var(--ink, #efe7d8);
+  white-space: nowrap;
+}
+.sdock-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-dim, #b3a58e); }
+.sdock-feed[data-tone="active"] .sdock-dot { background: var(--status-active, #4ec8de); }
+.sdock-feed[data-tone="blocked"] .sdock-dot { background: var(--status-blocked, #e0a534); }
+.sdock-feed[data-tone="refused"] .sdock-dot { background: var(--status-refused, #e4635c); }
+.sdock-feed[data-tone="refused"] { color: var(--status-refused, #e4635c); }
+.sdock-age { color: var(--warn, #e0a534); }
+
+.sdock .dsp-open {
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: transparent;
+  border-color: transparent;
+}
+.sdock .dsp-open:hover { border-color: var(--line-strong, #443626); }
+.sdock .dsp-panel { top: auto; bottom: calc(100% + 10px); right: 0; }
+
+.argus-main::after { content: ""; display: block; height: 64px; }
+
+@media (max-width: 760px) {
+  .sdock { right: 10px; bottom: 10px; }
+  .sdock-feed { padding: 0 8px; }
+}
+@media (max-width: 760px) {
+  .sdock-feed { padding: 0 12px; }
+  .sdock-feed .sdock-dot { width: 12px; height: 12px; }
+  .sdock-word,
+  .sdock .dsp-open > span {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+}
+@media (max-width: 760px) {
+  .sdock,
+  html[data-diary-dock="BOTTOM"] .sdock,
+  html[data-diary-dock="SHEET"] .sdock { top: 12px; bottom: auto; right: 10px; }
+  .sdock .dsp-panel { top: calc(100% + 10px); bottom: auto; }
+  .argus-main::after { height: 0; }
+}
+
+.sdock-signal {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px; padding: 0 12px; border-radius: 999px;
+  font-size: var(--t-body, 15px); text-decoration: none; white-space: nowrap;
+  color: var(--ink, #efe7d8); border: 1px solid transparent;
+}
+.sdock-signal[data-tone="refused"] { color: var(--status-refused, #e4635c); border-color: var(--status-refused-edge, #8c3b39); }
+.sdock-signal[data-tone="attention"] { color: var(--status-blocked, #e0a534); border-color: var(--status-blocked-edge, #8a6520); }
+.sdock-signal[data-tone="active"] { color: var(--status-active, #4ec8de); }
+.sdock-signal:focus-visible { outline: 3px solid var(--accent, #c08c44); outline-offset: 2px; }
+
+.sdock { z-index: 55; }
+html[data-diary-dock="RIGHT"] .sdock { right: calc(22px + var(--diary-extent, 0px)); }

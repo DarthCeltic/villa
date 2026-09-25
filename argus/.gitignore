@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+node_modules/
+argus/ui/dist/
+argus/ui/tsconfig.tsbuildinfo
+.pytest_cache/
+.env
+.env.local
+*.env.local
+*.log
+
+# Receipts and run output that the Docker stack writes on the host. The directories stay in the
+# repository (a bind mount that does not exist is created root-owned by Docker on Linux, and the
+# non-root container user could then not write to it), their contents do not.
+artifacts/*
+!artifacts/.gitkeep
+.private-science-unmounted/*
+!.private-science-unmounted/.gitkeep

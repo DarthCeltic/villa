@@ -1,0 +1,20 @@
+{
+ "contract": "argus-runtime-freeze-v1",
+ "scope": "public core runtime (service + test extras); certified 2026-09-24",
+ "python": {
+  "version": "3.11.9",
+  "implementation": "CPython",
+  "platform": "Windows AMD64"
+ },
+ "torch": {
+  "version": null,
+  "cuda": null,
+  "optional": true,
+  "why": "torch belongs to the optional `surface-model` extra (GPU tiers); the core runtime does not install it"
+ },
+ "lockfile": {
+  "path": "runtime/requirements.lock.txt",
+  "n_packages": 39,
+  "sha256": "870767072165dc5910d577bcda6409049b76dbfd94f0b6b955b8b2bb93b435b9"
+ }
+}

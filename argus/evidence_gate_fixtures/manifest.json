@@ -1,0 +1,1 @@
+{"schema":"argus-evidence-fixtures-v1","fixtures":[{"name":"clean","expected":"PASS"},{"name":"mesh_outside_volume","expected":"FAIL"},{"name":"all_fill","expected":"FAIL"},{"name":"seam_across_sheet","expected":"FAIL"},{"name":"overlap_inconsistent","expected":"FAIL"}]}

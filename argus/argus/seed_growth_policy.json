@@ -1,0 +1,18 @@
+{
+  "schema": "argus-seed-selection-policy-v1",
+  "policy_id": "surface-prediction-conservative-v1",
+  "prediction_threshold": 0.5,
+  "minimum_neighborhood_support": 1.0,
+  "minimum_boundary_distance_voxels": 16.0,
+  "maximum_sheet_switch_risk": 0.05,
+  "minimum_winner_margin": 0.02,
+  "score_weights": {
+    "prediction": 0.45,
+    "neighborhood_support": 0.35,
+    "boundary_distance": 0.15,
+    "sheet_switch_safety": 0.05
+  },
+  "boundary_distance_saturation_voxels": 64.0,
+  "ambiguity_action": "REFUSE_FOR_VERIFICATION",
+  "scientific_boundary": "The policy chooses where to begin a governed surface grow. It does not certify that the resulting mesh is the correct sheet."
+}

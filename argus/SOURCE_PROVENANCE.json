@@ -1,0 +1,9 @@
+{
+ "contract": "argus-source-provenance-v1",
+ "source_revision": "32c0d45925811b58ac2bd719aee9f4fe6004302c",
+ "source_mode": "head",
+ "worktree_prefixes": [],
+ "worktree_files": [],
+ "exporter": "the ARGUS public-export tool (not part of this release)",
+ "meaning": "every exported file was read from source_revision (or, when listed, from that build owner's working tree) and then transformed by the public-export allowlist; the source repository itself is private and is not part of this release"
+}

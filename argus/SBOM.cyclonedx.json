@@ -1,0 +1,282 @@
+{
+ "bomFormat": "CycloneDX",
+ "specVersion": "1.5",
+ "version": 1,
+ "metadata": {
+  "timestamp": "2026-09-21T10:44:06Z",
+  "tools": [
+   {
+    "vendor": "ARGUS",
+    "name": "release-sbom"
+   }
+  ],
+  "component": {
+   "type": "application",
+   "bom-ref": "argus:root",
+   "name": "ARGUS",
+   "description": "Ancient Reconstruction & Glyph Unwrapping System",
+   "licenses": [
+    {
+     "license": {
+      "id": "Apache-2.0"
+     }
+    }
+   ]
+  },
+  "properties": [
+   {
+    "name": "argus:commit",
+    "value": "see RELEASE_MANIFEST.json"
+   },
+   {
+    "name": "argus:registry",
+    "value": "argus-licence-registry-v1"
+   },
+   {
+    "name": "argus:why_four_permissions",
+    "value": "a licence field says what a component is licensed under; these say what ARGUS may DO with it. CC BY-NC data is safe to fetch and use and must never be redistributed, and one licence string leaves that to be interpreted correctly at packaging time."
+   },
+   {
+    "name": "argus:undeclared_is_a_refusal",
+    "value": "components with no grant are emitted as UNDECLARED with the refusal spelled out, never as a blank or NOASSERTION, which would read as 'not filled in yet' rather than 'there is no permission'."
+   }
+  ]
+ },
+ "components": [
+  {
+   "type": "library",
+   "bom-ref": "argus:code:e7c11e883898",
+   "name": "ARGUS",
+   "licenses": [
+    {
+     "license": {
+      "id": "Apache-2.0"
+     }
+    }
+   ],
+   "externalReferences": [],
+   "properties": [
+    {
+     "name": "argus:kind",
+     "value": "CODE"
+    },
+    {
+     "name": "argus:licence_family",
+     "value": "PERMISSIVE"
+    },
+    {
+     "name": "argus:source",
+     "value": "this repository"
+    },
+    {
+     "name": "argus:evidence",
+     "value": "Sole copyright holder; LICENSE carries the canonical Apache-2.0 text with the copyright line named in LICENSE."
+    },
+    {
+     "name": "argus:permission:run_locally",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:bundle_in_installer",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:redistribute",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:prize_submission",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "type": "application",
+   "bom-ref": "argus:tool:c81bc334525f",
+   "name": "vc_render_tifxyz / volume-cartographer",
+   "licenses": [
+    {
+     "license": {
+      "id": "GPL-3.0"
+     }
+    }
+   ],
+   "externalReferences": [],
+   "properties": [
+    {
+     "name": "argus:kind",
+     "value": "TOOL"
+    },
+    {
+     "name": "argus:licence_family",
+     "value": "COPYLEFT"
+    },
+    {
+     "name": "argus:source",
+     "value": "ScrollPrize/villa"
+    },
+    {
+     "name": "argus:evidence",
+     "value": "volume-cartographer/LICENSE (the villa repository ROOT LICENSE is MIT; GPL-3.0 applies only to the volume-cartographer subtree, confirmed by a live scan of the upstream repository)"
+    },
+    {
+     "name": "argus:permission:run_locally",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:bundle_in_installer",
+     "value": "false"
+    },
+    {
+     "name": "argus:permission:redistribute",
+     "value": "false"
+    },
+    {
+     "name": "argus:permission:prize_submission",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "type": "data",
+   "bom-ref": "argus:data:f29d70517876",
+   "name": "Herculaneum CT volumes",
+   "licenses": [
+    {
+     "license": {
+      "id": "CC BY-NC 4.0"
+     }
+    }
+   ],
+   "externalReferences": [],
+   "properties": [
+    {
+     "name": "argus:kind",
+     "value": "DATA"
+    },
+    {
+     "name": "argus:licence_family",
+     "value": "NONCOMMERCIAL"
+    },
+    {
+     "name": "argus:source",
+     "value": "vesuvius-challenge-open-data S3"
+    },
+    {
+     "name": "argus:evidence",
+     "value": "Vesuvius Challenge data terms"
+    },
+    {
+     "name": "argus:permission:run_locally",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:bundle_in_installer",
+     "value": "false"
+    },
+    {
+     "name": "argus:permission:redistribute",
+     "value": "false"
+    },
+    {
+     "name": "argus:permission:prize_submission",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "type": "library",
+   "bom-ref": "argus:code:2f3db1ae67ed",
+   "name": "torch / OpenCV / zarr",
+   "licenses": [
+    {
+     "license": {
+      "id": "Apache-2.0 / BSD-3-Clause"
+     }
+    }
+   ],
+   "externalReferences": [],
+   "properties": [
+    {
+     "name": "argus:kind",
+     "value": "CODE"
+    },
+    {
+     "name": "argus:licence_family",
+     "value": "PERMISSIVE"
+    },
+    {
+     "name": "argus:source",
+     "value": "PyPI"
+    },
+    {
+     "name": "argus:evidence",
+     "value": "package metadata"
+    },
+    {
+     "name": "argus:permission:run_locally",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:bundle_in_installer",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:redistribute",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:prize_submission",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "type": "library",
+   "bom-ref": "argus:code:1fc52d1306de",
+   "name": "scikit-learn (test only)",
+   "licenses": [
+    {
+     "license": {
+      "id": "BSD-3-Clause"
+     }
+    }
+   ],
+   "externalReferences": [],
+   "properties": [
+    {
+     "name": "argus:kind",
+     "value": "CODE"
+    },
+    {
+     "name": "argus:licence_family",
+     "value": "PERMISSIVE"
+    },
+    {
+     "name": "argus:source",
+     "value": "PyPI scikit-learn"
+    },
+    {
+     "name": "argus:evidence",
+     "value": "declared 2026-09-11 in pyproject [project.optional-dependencies] test; installed version 1.9.1; BSD-3-Clause is permissive and checked, not assumed"
+    },
+    {
+     "name": "argus:permission:run_locally",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:bundle_in_installer",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:redistribute",
+     "value": "true"
+    },
+    {
+     "name": "argus:permission:prize_submission",
+     "value": "true"
+    }
+   ]
+  }
+ ]
+}
