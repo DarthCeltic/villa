@@ -63,6 +63,17 @@ jobs:
         with:
           ref: ${{ inputs.commit_sha || github.sha }}
 
+      # Fork-only escape hatch for validating renderer changes while GitLab's
+      # PaStiX/SPM repositories are unavailable. The AppImage still contains
+      # VC3D and every vc_* app, including vc_render_tifxyz; only the unrelated
+      # standalone flatboi binary is omitted.
+      - name: Disable unrelated PaStiX fetch for renderer validation
+        if: inputs.request_id == 'renderer-provenance-no-flatboi'
+        run: |
+          sed -i '/cmake --preset ci-release-gcc \\/a\      -DVC_BUILD_FLATBOI=OFF \\' \
+            volume-cartographer/scripts/Dockerfile.appimage
+          grep -A3 'cmake --preset ci-release-gcc' volume-cartographer/scripts/Dockerfile.appimage
+
       # The build runs inside the published CI builder image (Ubuntu 26.04 + all
       # deps); logging in lets `docker build` pull it from ghcr.
       - name: Log in to ghcr.io
