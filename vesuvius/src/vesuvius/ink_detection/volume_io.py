@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import os
+import time
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable, TypeVar
 
 import aiohttp
 import numpy as np
@@ -17,6 +19,72 @@ from vesuvius.data.utils import open_zarr as open_vesuvius_zarr
 
 _PUBLIC_S3_VOLUME_SUBSTRING = "vesuvius-challenge-open-data"
 ZARR_V3 = int(zarr.__version__.split(".", 1)[0]) >= 3
+
+LOGGER = logging.getLogger(__name__)
+_T = TypeVar("_T")
+
+READ_MAX_ATTEMPTS = 4
+READ_BACKOFF_INITIAL_SECONDS = 0.5
+READ_BACKOFF_MAX_SECONDS = 8.0
+
+# Errors that say the request itself is wrong (bounds, config, missing object,
+# permissions). They can never be fixed by asking again, and their messages
+# can carry numbers such as " 500" that the transient marker list would match.
+_NEVER_RETRY = (
+    IndexError,
+    KeyError,
+    ValueError,
+    TypeError,
+    NotImplementedError,
+    FileNotFoundError,
+    PermissionError,
+)
+
+
+class RemoteReadError(RuntimeError):
+    """A remote chunk read still failed after every allowed attempt."""
+
+
+def read_with_retry(
+    read: Callable[[], _T],
+    *,
+    description: str,
+    max_attempts: int = READ_MAX_ATTEMPTS,
+) -> _T:
+    """Run one read, retrying only transient network failures.
+
+    Reuses the predicate from the prediction path (#1244). Bounds, config,
+    missing-object and permission errors are raised on the first attempt.
+    After ``max_attempts`` transient failures a RemoteReadError names the
+    read and the attempt count, so a run stops loudly instead of continuing
+    with a hole in the input.
+    """
+
+    from vesuvius.data.volume import _is_transient_read_error
+
+    delay = READ_BACKOFF_INITIAL_SECONDS
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return read()
+        except _NEVER_RETRY:
+            raise
+        except Exception as exc:
+            if not _is_transient_read_error(exc):
+                raise
+            if attempt == max_attempts:
+                raise RemoteReadError(
+                    f"remote read of {description} failed after {attempt} "
+                    f"attempts; last error: {type(exc).__name__}: {exc}"
+                ) from exc
+            LOGGER.warning(
+                "Transient read error on %s (attempt %d/%d), retrying in "
+                "%.1fs: %s: %s",
+                description, attempt, max_attempts, delay,
+                type(exc).__name__, exc,
+            )
+            time.sleep(delay)
+            delay = min(delay * 2, READ_BACKOFF_MAX_SECONDS)
+    raise AssertionError("max_attempts must be at least 1")
 
 
 def _cache_snapshot(cache_dir: Path) -> list[tuple[int, int, Path]]:
@@ -231,11 +299,17 @@ def read_bbox_with_padding(
     if any(stop <= start for start, stop in zip(starts, stops)):
         return output, None
     crop = np.asarray(
-        volume[
-            starts[0] : stops[0],
-            starts[1] : stops[1],
-            starts[2] : stops[2],
-        ]
+        read_with_retry(
+            lambda: volume[
+                starts[0] : stops[0],
+                starts[1] : stops[1],
+                starts[2] : stops[2],
+            ],
+            description=(
+                f"z={starts[0]}:{stops[0]} y={starts[1]}:{stops[1]} "
+                f"x={starts[2]}:{stops[2]}"
+            ),
+        )
     )
     destination_starts = starts[0] - z0, starts[1] - y0, starts[2] - x0
     destination = tuple(

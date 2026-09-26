@@ -40,6 +40,7 @@ from vesuvius.ink_detection.volume_io import (
     ZARR_V3,
     open_volume,
     open_volume_root,
+    read_with_retry,
     select_volume_level,
 )
 from vesuvius.utils.cli import HyphenUnderscoreParser
@@ -438,6 +439,15 @@ class FlatPatchReader:
         return self._array
 
     def _read_raw(self, y0: int, y1: int, x0: int, x1: int) -> np.ndarray:
+        return read_with_retry(
+            lambda: self._read_raw_once(y0, y1, x0, x1),
+            description=(
+                f"{self.input_path} y={y0}:{y1} x={x0}:{x1} "
+                f"z={self._z_start}:{self._z_stop}"
+            ),
+        )
+
+    def _read_raw_once(self, y0: int, y1: int, x0: int, x1: int) -> np.ndarray:
         array = self._ensure_array()
         if self.depth_axis_first:
             if self._read_mode == "ascending":
